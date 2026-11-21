@@ -8,7 +8,7 @@ import json, os, sys, subprocess, wave, numpy as np
 from playwright.sync_api import sync_playwright
 
 MOTOR = os.path.dirname(os.path.abspath(__file__))
-SCR = '/tmp/claude-0/-home-claude/18ecb643-e46a-54b4-bb6c-bb4a8009ab64/scratchpad'
+SCR = os.environ.get('ESCALA_TMP', os.path.join(os.path.expanduser('~'), '.cache', 'escala-motor'))
 VOZ = os.path.join(SCR, 'voz', 'pt_BR-faber-medium.onnx')
 SR, FPS = 44100, 30
 
@@ -31,17 +31,19 @@ def ler(path):
 # ---------- narração ----------
 baixar_voz()
 FILTRO = {'tel': 'asetrate=22050*0.93,aresample=44100,highpass=f=350,lowpass=f=3200,volume=1.6',
+          'neto': 'asetrate=22050*1.08,aresample=44100,highpass=f=300,lowpass=f=3400,volume=1.5',
           'porta': 'asetrate=22050*0.9,aresample=44100,lowpass=f=1800,aecho=0.6:0.5:40:0.3,volume=1.8'}
 falas = []
 for i, seg in enumerate(S['trechos']):
     raw = f'{TMP}/s{i:02d}.wav'
     voz = seg.get('voz', 'narrador')
     # Voz Gemini (padrão desde 20/11) pelo serviço /voz; se falhar, cai na Piper e avisa.
-    g = subprocess.run([str(Path(__file__).resolve().parents[3] / 'rotinas' / 'voz.sh'), seg['fala'], raw + '.g.wav', seg.get('voz_gemini', 'Koda'), seg.get('estilo', '')], capture_output=True)
-    if g.returncode == 0:
+    VOZSH = os.environ.get('ESCALA_VOZSH', '')  # script opcional de voz Gemini; sem ele usa Piper
+    g = subprocess.run([VOZSH, seg['fala'], raw + '.g.wav', seg.get('voz_gemini', 'Koda'), seg.get('estilo', '')], capture_output=True) if VOZSH and os.path.exists(VOZSH) else None
+    if g is not None and g.returncode == 0:
         subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', raw + '.g.wav', '-ar', '22050', '-ac', '1', raw], check=True)
     else:
-        print('AVISO: voz Gemini falhou, usando Piper:', g.stderr.decode()[:200])
+        if g is not None: print('AVISO: voz Gemini falhou, usando Piper:', g.stderr.decode()[:200])
         subprocess.run(['python3', '-m', 'piper', '-m', VOZ, '-f', raw, '--length-scale', str(seg.get('ritmo', 1.0))],
                        input=seg['fala'].encode(), check=True, capture_output=True)
     if voz in FILTRO:
@@ -68,6 +70,9 @@ for i, seg in enumerate(S['trechos']):
     if seg.get('telefone') == 'off' and phone_on is not None: TL['phone'] = [phone_on, a]; phone_on = None
     if 'chamada' in seg:
         c = seg['chamada']; TL['calls'].append({'t': a - 0.2, 'a': fim + 0.15, 'name': c['nome'], 'icon': c.get('icone', 'bank')})
+        for b in bub_open: b['end'] = a - 0.2
+        bub_open = []
+    if seg.get('limpar_bolhas'):
         for b in bub_open: b['end'] = a - 0.2
         bub_open = []
     if 'bolha' in seg:
@@ -174,7 +179,9 @@ with wave.open(WAV, 'wb') as w:
 
 # ---------- imagem ----------
 def abrir(pw):
-    b = pw.chromium.launch(); pg = b.new_page(viewport={'width': 1080, 'height': 1920})
+    try: b = pw.chromium.launch()
+    except Exception: b = pw.chromium.launch(executable_path='/opt/pw-browsers/chromium')
+    pg = b.new_page(viewport={'width': 1080, 'height': 1920})
     pg.goto('file://' + os.path.join(MOTOR, 'serie.html')); pg.wait_for_timeout(600)
     pg.evaluate('tl => { TL = tl; init(); }', TL); return b, pg
 with sync_playwright() as pw:

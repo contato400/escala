@@ -1,0 +1,107 @@
+{
+ "nome": "s01p3",
+ "selo": "PARTE 3",
+ "trechos": [
+  {
+   "fala": "Ontem, um motoboy bateu na porta da Dona Neide pra buscar o cartão que ela tinha cortado.",
+   "legenda": "Ontem: o *motoboy chegou.",
+   "porta": "on",
+   "batida": true
+  },
+  {
+   "fala": "Ela olhou pelo olho mágico. Capacete preto, mochila de entrega, celular na mão.",
+   "legenda": "Capacete, mochila e ^celular na mão."
+  },
+  {
+   "fala": "Pode abrir, senhora. É rapidinho, só assinar.",
+   "voz": "porta",
+   "voz_porta": "Pode abrir, senhora. É rapidinho, só assinar."
+  },
+  {
+   "fala": "A mão dela já estava na maçaneta.",
+   "legenda": "A mão já estava na *maçaneta.",
+   "tensao": true
+  },
+  {
+   "fala": "Foi aí que ela lembrou do almoço de domingo, quando o Caio falou uma coisa.",
+   "legenda": "Ela lembrou do ^Caio."
+  },
+  {
+   "fala": "Vó, banco nenhum manda ninguém buscar cartão na casa da gente.",
+   "voz": "neto",
+   "regra": "Banco NUNCA manda buscar cartão.",
+   "regra_titulo": "O CAIO TINHA FALADO"
+  },
+  {
+   "fala": "Ela tirou a mão da porta.",
+   "legenda": "Ela tirou a +mão da porta."
+  },
+  {
+   "fala": "E falou alto: o senhor espera aí, que eu vou ligar pro meu banco.",
+   "legenda": "\"Espera aí. Vou ligar pro ^meu banco.\""
+  },
+  {
+   "fala": "Do outro lado, silêncio. Depois, passos descendo a escada, bem rápido.",
+   "legenda": "Silêncio. Depois, *passos.",
+   "porta": "off"
+  },
+  {
+   "fala": "Ele fugiu. E funcionário de banco de verdade não foge.",
+   "legenda": "Banco de verdade não *foge."
+  },
+  {
+   "fala": "Mas o celular não parou de tocar.",
+   "legenda": "Mas o celular ^tocou.",
+   "telefone": "on",
+   "chamada": {
+    "nome": "Central de Segurança",
+    "icone": "bank"
+   }
+  },
+  {
+   "fala": "Dona Neide, por que a senhora não entregou? Agora a sua conta está em risco.",
+   "voz": "tel",
+   "bolha": "Por que a senhora não entregou? Sua conta está em risco.",
+   "tensao": true
+  },
+  {
+   "fala": "Se a gente não resolver em dez minutos, a senhora perde tudo.",
+   "voz": "tel",
+   "bolha": "Em 10 minutos a senhora perde tudo.",
+   "tensao": true
+  },
+  {
+   "fala": "Pressa e medo. São as duas armas de todo golpista.",
+   "legenda": "^Pressa e ^medo: as armas do golpe."
+  },
+  {
+   "fala": "Então vamos fazer de outro jeito. A senhora vai passar o seu saldo pra uma conta segura.",
+   "voz": "tel",
+   "limpar_bolhas": true,
+   "bolha": "Vamos fazer de outro jeito. Passa o saldo pra uma conta segura."
+  },
+  {
+   "fala": "Conta segura.",
+   "legenda": "Conta *segura.",
+   "escurecer": true
+  },
+  {
+   "fala": "Você sabe o que é a tal conta segura? Comenta aí.",
+   "final": {
+    "selo": "FIM DA PARTE 3",
+    "pergunta": "Você sabe o que é a tal conta segura?",
+    "chamada": "Segue para ver <span class=k>a parte 4</span><small>sai amanhã</small>"
+   }
+  },
+  {
+   "fala": "Segue pra ver a parte quatro amanhã.",
+   "mostrar_chamada": true
+  }
+ ],
+ "capa": {
+  "selo": "PARTE 3",
+  "titulo": "O OLHO<br><span style='color:#ff3341'>MÁGICO</span>",
+  "faixa": "A mão já estava na maçaneta",
+  "quadro": 6.0
+ }
+}

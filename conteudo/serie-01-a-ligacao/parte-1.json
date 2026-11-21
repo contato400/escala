@@ -1,0 +1,98 @@
+{
+ "nome": "s01p1",
+ "selo": "PARTE 1",
+ "trechos": [
+  {
+   "fala": "Nove da noite. O celular da Dona Neide tocou. Era o banco.",
+   "legenda": "21h. O ^banco ligou.",
+   "telefone": "on",
+   "chamada": {
+    "nome": "Central de Segurança",
+    "icone": "bank"
+   }
+  },
+  {
+   "fala": "Boa noite, dona Neide. Aqui é o Rodrigo, da central de segurança do seu banco.",
+   "voz": "tel",
+   "bolha": "Boa noite, dona Neide. Aqui é o Rodrigo, da segurança do banco."
+  },
+  {
+   "fala": "Tem uma compra de quatro mil, oitocentos e noventa reais no seu cartão, em Manaus. Foi a senhora?",
+   "voz": "tel",
+   "bolha": "Compra de R$ 4.890 em Manaus. Foi a senhora?",
+   "tensao": true
+  },
+  {
+   "fala": "Ela nunca tinha ido pra Manaus.",
+   "legenda": "Ela nunca foi pra *Manaus."
+  },
+  {
+   "fala": "E o pior: ele sabia o nome completo dela, o CPF e o final do cartão.",
+   "legenda": "Ele sabia o ^nome, o ^CPF e o ^final do cartão."
+  },
+  {
+   "fala": "Fica tranquila, a gente vai bloquear agora. Só confirma a sua senha no teclado.",
+   "voz": "tel",
+   "limpar_bolhas": true,
+   "bolha": "Vamos bloquear. Só confirma a sua senha no teclado."
+  },
+  {
+   "fala": "Ela digitou os quatro números, com o dedo tremendo.",
+   "legenda": "Ela digitou a *senha.",
+   "dedo": true
+  },
+  {
+   "fala": "Pausa aqui: banco nenhum pede a sua senha por telefone. Nunca.",
+   "regra": "Banco NUNCA pede senha por telefone."
+  },
+  {
+   "fala": "Perfeito. Agora presta atenção, que é muito importante.",
+   "voz": "tel",
+   "limpar_bolhas": true,
+   "bolha": "Perfeito. Agora presta atenção."
+  },
+  {
+   "fala": "Pega uma tesoura e corta o cartão ao meio. Mas não estraga o chip.",
+   "voz": "tel",
+   "bolha": "Corta o cartão ao meio. Mas não estraga o chip.",
+   "tensao": true
+  },
+  {
+   "fala": "Por que ele queria o chip inteiro?",
+   "legenda": "Por que ele queria o ^chip inteiro?"
+  },
+  {
+   "fala": "Um funcionário nosso já está indo buscar o cartão na sua casa.",
+   "voz": "tel",
+   "bolha": "Um funcionário já está indo buscar na sua casa.",
+   "tensao": true
+  },
+  {
+   "fala": "Ela olhou pro relógio. Nove e quinze da noite, e ela estava sozinha em casa.",
+   "legenda": "E ela estava *sozinha em casa."
+  },
+  {
+   "fala": "A Dona Neide abriu a gaveta da cozinha, e pegou a tesoura.",
+   "legenda": "Ela pegou a *tesoura.",
+   "escurecer": true
+  },
+  {
+   "fala": "E você? Entregaria esse cartão?",
+   "final": {
+    "selo": "FIM DA PARTE 1",
+    "pergunta": "E você? Entregaria o cartão?",
+    "chamada": "Segue para ver <span class=k>a parte 2</span><small>sai amanhã</small>"
+   }
+  },
+  {
+   "fala": "Segue pra ver a parte dois amanhã.",
+   "mostrar_chamada": true
+  }
+ ],
+ "capa": {
+  "selo": "PARTE 1",
+  "titulo": "O BANCO<br><span style='color:#ff3341'>LIGOU</span>",
+  "faixa": "Ele sabia até o CPF dela",
+  "quadro": 6.0
+ }
+}

@@ -1,0 +1,121 @@
+{
+ "nome": "s01p4",
+ "selo": "PARTE 4",
+ "pix_tela": {
+  "para": "Para: R. SILVA SERVIÇOS<br><span style='font-size:32px;color:#666'>\"conta segura\"</span>",
+  "valor": "R$ 12.300,00"
+ },
+ "trechos": [
+  {
+   "fala": "Ontem, o falso banco mandou a Dona Neide passar todo o dinheiro pra uma conta segura.",
+   "legenda": "Ontem: \"passa tudo pra conta ^segura\".",
+   "telefone": "on",
+   "chamada": {
+    "nome": "Central de Segurança",
+    "icone": "bank"
+   }
+  },
+  {
+   "fala": "É uma conta no seu nome, senhora. Só pra proteger o dinheiro até amanhã.",
+   "voz": "tel",
+   "bolha": "É uma conta no seu nome. Só até amanhã."
+  },
+  {
+   "fala": "Ela abriu o aplicativo e foi no Pix. Doze mil e trezentos reais. A economia de uma vida.",
+   "legenda": "R$ 12.300. A economia de uma *vida.",
+   "pix": "on"
+  },
+  {
+   "fala": "Mas o nome na tela não era o dela.",
+   "legenda": "Mas o nome não era o ^dela."
+  },
+  {
+   "fala": "Era de um tal de R. Silva Serviços. Um desconhecido.",
+   "legenda": "Era de um *desconhecido."
+  },
+  {
+   "fala": "Pode confirmar, dona Neide. Rápido, antes que bloqueiem tudo.",
+   "voz": "tel",
+   "legenda": "\"Confirma. *Rápido.\"",
+   "dedo": true,
+   "tensao": true
+  },
+  {
+   "fala": "O dedo dela foi pro botão verde.",
+   "legenda": "O dedo foi pro *botão.",
+   "tensao": true
+  },
+  {
+   "fala": "E aí o celular vibrou. Outra ligação. Era o Caio.",
+   "legenda": "Outra ligação: ^Caio.",
+   "pix": "off",
+   "chamada": {
+    "nome": "Caio (neto)",
+    "icone": "user"
+   }
+  },
+  {
+   "fala": "Vó, a senhora não respondeu a minha mensagem. Tá tudo bem?",
+   "voz": "neto",
+   "bolha": "Vó, a senhora não respondeu. Tá tudo bem?",
+   "rotulo": "CAIO DISSE:"
+  },
+  {
+   "fala": "Ela contou tudo, chorando.",
+   "legenda": "Ela contou ^tudo."
+  },
+  {
+   "fala": "Vó, desliga agora e não faz nada! Isso é golpe!",
+   "voz": "neto",
+   "bolha": "Desliga agora e não faz nada! É golpe!",
+   "rotulo": "CAIO DISSE:",
+   "tensao": true
+  },
+  {
+   "fala": "Guarda isso: conta segura não existe. Nenhum banco pede pra você mudar o seu dinheiro de lugar.",
+   "regra": "Conta segura NÃO existe."
+  },
+  {
+   "fala": "Ela desligou tudo. O dinheiro ficou onde estava.",
+   "legenda": "Ela desligou. Dinheiro +salvo.",
+   "encerrar": true
+  },
+  {
+   "fala": "Só que, dois minutos depois, o celular tocou de novo.",
+   "legenda": "2 minutos depois...",
+   "chamada": {
+    "nome": "Delegacia de Polícia",
+    "icone": "police"
+   }
+  },
+  {
+   "fala": "Dona Neide, aqui é o delegado Moura. Sabemos do golpe. Precisamos da sua ajuda pra prender essa quadrilha.",
+   "voz": "tel",
+   "bolha": "Aqui é o delegado Moura. Precisamos da sua ajuda pra prender a quadrilha.",
+   "tensao": true
+  },
+  {
+   "fala": "E a ajuda era um Pix.",
+   "legenda": "E a ajuda era um *Pix.",
+   "escurecer": true
+  },
+  {
+   "fala": "Polícia pede Pix? Responde aí.",
+   "final": {
+    "selo": "FIM DA PARTE 4",
+    "pergunta": "Polícia pede Pix?",
+    "chamada": "Segue para ver <span class=k>o final</span><small>sai amanhã</small>"
+   }
+  },
+  {
+   "fala": "Segue pra ver o final amanhã.",
+   "mostrar_chamada": true
+  }
+ ],
+ "capa": {
+  "selo": "PARTE 4",
+  "titulo": "A CONTA<br><span style='color:#ff3341'>SEGURA</span>",
+  "faixa": "R$ 12.300 a um clique",
+  "quadro": 12.0
+ }
+}

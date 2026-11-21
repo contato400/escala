@@ -1,0 +1,101 @@
+{
+ "nome": "s01p2",
+ "selo": "PARTE 2",
+ "trechos": [
+  {
+   "fala": "Ontem, um falso funcionário do banco mandou a Dona Neide cortar o cartão ao meio.",
+   "legenda": "Ontem: o falso banco pediu o *cartão.",
+   "telefone": "on",
+   "chamada": {
+    "nome": "Central de Segurança",
+    "icone": "bank"
+   }
+  },
+  {
+   "fala": "Ela cortou. O chip ficou inteiro.",
+   "legenda": "Ela cortou. O ^chip ficou inteiro."
+  },
+  {
+   "fala": "Muito bem, dona Neide. Agora não desliga, tá? A linha fica protegida.",
+   "voz": "tel",
+   "bolha": "Muito bem. Não desliga, tá? A linha fica protegida."
+  },
+  {
+   "fala": "Linha protegida não existe. Ele só queria que ela não falasse com mais ninguém.",
+   "legenda": "Ele não queria que ela falasse com *ninguém."
+  },
+  {
+   "fala": "Ela pensou no neto, o Caio. Ele sempre sabia o que fazer.",
+   "legenda": "Ela pensou no neto, o ^Caio."
+  },
+  {
+   "fala": "E bem nessa hora chegou uma mensagem dele: vó, tá acordada?",
+   "limpar_bolhas": true,
+   "bolha": "Vó, tá acordada?",
+   "rotulo": "MENSAGEM DO CAIO:"
+  },
+  {
+   "fala": "Dona Neide, por segurança a senhora não pode avisar ninguém. Nem a família.",
+   "voz": "tel",
+   "bolha": "Por segurança, a senhora não pode avisar ninguém. Nem a família.",
+   "tensao": true
+  },
+  {
+   "fala": "Guarda isso: quem pede segredo é golpista. Banco de verdade nunca pede.",
+   "regra": "Pediu segredo? É golpe."
+  },
+  {
+   "fala": "Ela deixou a mensagem do neto sem resposta.",
+   "legenda": "Ela deixou o neto *sem resposta."
+  },
+  {
+   "fala": "O motoboy já está chegando. Coloca o cartão num envelope fechado.",
+   "voz": "tel",
+   "limpar_bolhas": true,
+   "bolha": "O motoboy está chegando. Coloca o cartão num envelope."
+  },
+  {
+   "fala": "Cartão cortado, senha entregue, envelope fechado. Tudo pronto.",
+   "legenda": "Cartão, senha e *envelope prontos."
+  },
+  {
+   "fala": "Aí alguém bateu na porta.",
+   "legenda": "Alguém bateu na *porta.",
+   "telefone": "off",
+   "porta": "on",
+   "batida": true
+  },
+  {
+   "fala": "Boa noite! Vim buscar o cartão do banco.",
+   "voz": "porta",
+   "voz_porta": "Boa noite! Vim buscar o cartão do banco."
+  },
+  {
+   "fala": "Ela olhou o envelope na mão. Ali dentro estava tudo.",
+   "legenda": "Ali dentro estava ^tudo."
+  },
+  {
+   "fala": "Ela pegou o envelope e foi abrir.",
+   "legenda": "Ela pegou o envelope e foi ^abrir.",
+   "tensao": true
+  },
+  {
+   "fala": "E agora? Ela devia abrir essa porta?",
+   "final": {
+    "selo": "FIM DA PARTE 2",
+    "pergunta": "Ela devia abrir a porta?",
+    "chamada": "Segue para ver <span class=k>a parte 3</span><small>sai amanhã</small>"
+   }
+  },
+  {
+   "fala": "Segue pra ver a parte três amanhã.",
+   "mostrar_chamada": true
+  }
+ ],
+ "capa": {
+  "selo": "PARTE 2",
+  "titulo": "NÃO CONTA<br><span style='color:#ff3341'>PRA NINGUÉM</span>",
+  "faixa": "E bateram na porta",
+  "quadro": 4.0
+ }
+}
