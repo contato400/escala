@@ -26,7 +26,7 @@ Quando falta informação, a IA preenche com o que costuma existir. Procure o qu
 - Prova social só real e autorizada. Curva ou dado ilustrativo leva o aviso "ilustração, não é dado real". Oferta ou bônus que a IA "acrescentou" também entra na lista.
 
 ## 3. Gate de texto (travessão e cara de IA)
-- Rode `python3 ferramentas/conferir_texto.py <roteiro.json> <legenda.srt> <descricao.md>`. Ele aponta travessão, "–" no lugar de travessão e as palavras de estoque de IA (a lista fica no script; acrescente lá o que aparecer).
+- Rode `python3 ferramentas/conferir_texto.py <roteiro.json> <legenda.srt> <descricao.md>`. Ele aponta travessão, a meia-risca no lugar dele e as palavras de estoque de IA (a lista fica no script; acrescente lá o que aparecer).
 - Código 1 = achou. Devolva a lista; só passa quando der zero.
 - O script não pega tudo: confira à mão três frases curtas em sequência sem intenção, final moralista, abertura de manual. **Dispositivo de marca desenhado de propósito** (um trio, um staccato planejado) é ofício, não defeito: a diferença é intenção.
 
