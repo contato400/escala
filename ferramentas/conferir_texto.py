@@ -32,10 +32,9 @@ EXPRESSOES = [
     ("estoque", r"\balavanc\w+"),
     ("estoque", r"\brobust[oa]s?\b"),
     ("estoque", r"\bempoder\w+"),
-    ("estoque", r"\bdestrav\w+"),
     ("estoque", r"\bacion[aá]ve(l|is)\b"),
     ("estoque", r"\borientad[oa]s? (a|por) dados\b"),
-    ("estoque", r"\bsolu[cç][aã]o\b|\bsolu[cç][oõ]es\b"),
+    ("estoque", r"\bsolu[cç](ão|ões) (inovador|completa|perfeita|definitiva|ideal|robusta)\w*"),  # "solução" sozinha é português normal
     ("estoque", r"\bsinergi\w+"),
     ("estoque", r"\bescal[aá]ve(l|is)\b"),
     # conectivos e muletas de texto de IA (pacotes-zip 1.D e guia-100-skills C.1)
