@@ -12,3 +12,9 @@
 - **Pendente:** "aprova" do Victor para a série; prints do Creator Search Insights (prova do tema no TikTok); decisão de conta profissional no Instagram; publicar 23/11 e o analista medir 24 h e 72 h.
 - **Verificado:** folhas de conferência das 5 partes olhadas (legenda inteira, área segura, português); MP4 1080x1920 30 fps, 61,8 a 67 s, som desde o quadro 0, volume médio -18 dB, comprimidos para ~25 MB (crf 22, agora padrão do motor). Não ouvi o áudio (sem fone aqui): o Victor deve assistir a parte 1 inteira antes de aprovar.
 - **Atenção:** prova de viral do tema ainda fraca no YouTube (muitos vídeos do assunto no mês, mas poucas views, quase todos longos). Confirmar no TikTok.
+
+## 21/11/2026 · Telegram passo 1
+- **Pedido:** guiar a criação da conta nova do Cloudflare e do bot no @BotFather (plano em `memoria/plano-telegram.md`).
+- **Feito:** guia `telegram/passo-1.md`; andamento anotado no plano.
+- **Pendente:** Victor fazer as partes A e B e mandar subdomínio workers.dev + @ do bot; aí começa o passo 2 (código do Worker). Também pausado a pedido: recriar a parte 1 da série 1 com as skills novas (pedido interrompido, retomar quando o Victor quiser).
+- **Verificado:** nada a testar ainda (depende de ação do Victor). Os nomes dos menus do Cloudflare podem variar com a versão do painel; o guia cita os dois nomes.

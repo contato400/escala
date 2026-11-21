@@ -24,3 +24,6 @@ Não depender de abrir o Claude. Um bot no Telegram (grátis) por onde o chefe m
 2. Worker do chefe com allowlist do usuário, botões e fila.
 3. Ambiente na nuvem com rede liberada + tarefa agendada da fábrica que manda prévia no Telegram (testar à mão 2 vezes antes de deixar no automático).
 4. Publicador.
+
+## Andamento
+- 21/11: passo 1 com guia em `telegram/passo-1.md` (conta Cloudflare nova, subdomínio workers.dev, bot no @BotFather fechado para grupos, comandos /fila /temas /produzir /status, Id do dono pelo @userinfobot). Aguardando o Victor confirmar "Cloudflare ok" e "Bot ok" com o subdomínio e o @ do bot. Token e Id ficam só no Cloudflare (segredos), nunca no repositório.
