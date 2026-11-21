@@ -2,7 +2,9 @@
 
 Operação de contas próprias do Victor (TikTok, Instagram Reels, YouTube Shorts, logadas no e-mail Victor Augusto) para crescer com conteúdo viral adaptado e gerar caixa que pague as ferramentas do projeto WG. Responsável e aprovador: **Victor**.
 
-Leia antes de qualquer tarefa: este arquivo, `memoria/estado.md`, a última entrada de `memoria/passagem.md` e a ficha do agente em `.claude/agents/`. A skill `escala-regras` vale em TODA tarefa.
+Leia antes de qualquer tarefa: este arquivo, `memoria/estado.md`, a última entrada de `memoria/passagem.md` e a ficha do agente em `.claude/agents/`. A skill `escala-regras` vale em TODA tarefa. As skills ficam em `.claude/skills/<nome>/SKILL.md`: identifique o assunto e LEIA o SKILL.md certo antes de agir (projetos em nuvem não carregam as skills do repositório sozinhos), mesmo que ela já esteja salva na conta.
+
+Marca das contas: **Quase Aconteceu** (decidido 21/11). Detalhes em `memoria/estado.md`.
 
 ## 1. Missão e ordem
 1. Crescer e engajar (seguidores, views, retenção).
