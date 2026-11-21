@@ -60,7 +60,7 @@ TOTAL = t + 2.2
 dur = [len(f) / SR for f in falas]
 
 # ---------- linha do tempo ----------
-TL = {'total': TOTAL, 'badge': S.get('selo', ''), 'pixtela': S.get('pix_tela'), 'caps': [], 'calls': [], 'bubbles': [], 'shakes': [], 'beats': [], 'rule': [], 'knocks': []}
+TL = {'total': TOTAL, 'badge': S.get('selo', ''), 'etiqueta': S.get('etiqueta', 'HISTÓRIA BASEADA EM GOLPES REAIS'), 'pixtela': S.get('pix_tela'), 'caps': [], 'calls': [], 'bubbles': [], 'shakes': [], 'beats': [], 'rule': [], 'knocks': []}
 phone_on = door_on = pix_on = None; bub_open = []; tense = []; caps = []
 for i, seg in enumerate(S['trechos']):
     a, d = pos[i], dur[i]; fim = a + d
@@ -110,7 +110,7 @@ if 'open' in TL:  # abertura: o gancho já está inteiro no quadro 0 (texto, tel
     if caps: caps[0]['t'] = min(caps[0]['t'], -1.0)
     if 'phone' in TL and TL['phone'][0] < 0.5: TL['phone'][0] = -1.0
     if TL['calls'] and TL['calls'][0]['a'] <= 0.5: TL['calls'][0]['t'] = TL['calls'][0]['a'] = -1.0
-    if TL['bubbles'] and TL['bubbles'][0]['t'] < 0.5: TL['bubbles'][0]['t'] -= 0.6
+    if TL['bubbles'] and TL['bubbles'][0]['t'] < 1.0: TL['bubbles'][0]['t'] -= 0.6
 for c in TL['calls']: pass
 
 # ---------- som ----------

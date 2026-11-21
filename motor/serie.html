@@ -115,6 +115,7 @@ function init(){ // monta bolhas e regras uma vez
  if(TL.rules)$('#rules').innerHTML=TL.rules.items.map((r,i)=>`<div class="it" id="ri${i}"><div class="ck">✓</div><div>${r.txt}</div></div>`).join('');
  if(TL.fin){$('#fp').textContent=TL.fin.badge;$('#fq').innerHTML=TL.fin.q;$('#fc').innerHTML=TL.fin.cta}
  if(TL.badge)$('#badge').textContent=TL.badge;
+ if(TL.etiqueta!==undefined){$('#tag').textContent=TL.etiqueta;$('#tag').style.display=TL.etiqueta?'':'none'}
  if(TL.pixtela){$('#pxto').innerHTML=TL.pixtela.para;$('#pxval').textContent=TL.pixtela.valor}
 }
 function render(t){

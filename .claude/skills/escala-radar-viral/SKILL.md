@@ -6,10 +6,9 @@ description: Aciona quando for descobrir o que está viralizando no TikTok, Inst
 
 ## Onde olhar (todo dia, 20 a 30 min)
 - **TikTok**: aba "Novelas" (populares), "Creator Search Insights" (pesquisar no app; filtrar Brasil; ver tópicos em alta dos últimos 7 dias e o gráfico), página Explorar/For You do nicho.
-- **YouTube Shorts**: busca por tema com filtro "esta semana" e ordenar por visualizações; canais de "histórias", "novelinha", "curiosidades", "golpes". Use a TranscriptAPI (`search_youtube` com `upload_date: week`, `sort: views`; `get_youtube_transcript` para ler o roteiro e mapear a estrutura).
-- **Instagram Reels**: aba Reels e Explorar do nicho; perfis grandes de histórias/curiosidades.
-- **Temas que já provaram**: assuntos que mais engajaram no perfil do Wesley (Metricool, YouTube dele), **só como tema**.
-- **Notícia do dia**: golpe novo, caso que todo mundo comenta (nunca explorar vítima).
+- **YouTube Shorts**: busca por tema com filtro "esta semana" e ordenar por visualizações; qualquer assunto que estiver subindo (jogo, polêmica, desenho, animal, música, história, humor, notícia), sem filtro de nicho. Use a TranscriptAPI (`search_youtube` com `upload_date: week`, `sort: views`; `get_youtube_transcript` para ler o roteiro e mapear a estrutura).
+- **Instagram Reels**: aba Reels e Explorar; os Reels e perfis que mais estão crescendo, de qualquer assunto.
+- **Notícia do dia**: o assunto que todo mundo está comentando (lançamento, polêmica, caso famoso), sem explorar vítima.
 
 ## Buscas que já trouxeram ouro (21/11)
 - "como criar curtas de animação virais", "stickman animated shorts", "novelinha com IA", "você decide o fim série", "e se" + tema; filtro do último mês, ordenar por views.
@@ -31,4 +30,4 @@ Nunca copiar falas, imagens ou personagens; extrair só o esqueleto.
 3 temas, cada um com: prova (views e data), esqueleto, ideia da nossa versão e título da série. Salvar em `conteudo/AAAA-MM-DD/radar.md` e manter `conteudo/banco-de-temas.md` (temas que funcionaram sobem; os que floparam saem).
 
 ## Sinais de tema bom
-Funciona para muita gente (amplo), tem tensão que sobe e desce, dá para virar série de 3 a 7 partes, dá para resolver com uma lição útil, e cabe num produto barato depois (fase 2).
+Funciona para muita gente (amplo), tem tensão que sobe e desce, dá para virar série de 3 a 7 partes, tem prova de view recente, e cabe num produto barato depois (fase 2).

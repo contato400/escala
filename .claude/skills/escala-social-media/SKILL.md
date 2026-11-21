@@ -16,22 +16,25 @@ Toda rodada termina com: fila atualizada, `central.py lido`, passagem e commit.
 
 ## 2. Radar por rede (nunca misturar)
 O que bomba no TikTok pode não bombar no YouTube. Cada rede tem sua coluna, com prova (link, views, data):
-- **YouTube**: TranscriptAPI `search_youtube` com `upload_date: today` e `week`, `sort: views`, buscas em português (novelinha, história, golpe, curiosidade, o assunto do momento). Ler a transcrição do top 3 para pegar a estrutura.
+- **YouTube**: TranscriptAPI `search_youtube` com `upload_date: today` e `week`, `sort: views`, buscas amplas em português (o que está subindo hoje, qualquer assunto) e o assunto do momento. Ler a transcrição do top 3 para pegar a estrutura.
 - **TikTok**: busca na web por "viral TikTok Brasil" das últimas 24 h e Creative Center quando acessível. Prints que o Victor mandar da aba Para Você valem como prova.
 - **Instagram**: busca na web e prints do Victor da aba Reels. Sem prova, não entra.
 - **Assunto do momento**: notícia do dia (lançamento, jogo, caso que todo mundo comenta), com data absoluta e fonte.
 Saída: tabela Rede | O que está pegando | Prova | Formato | Cabe na marca? | Nossa versão.
 
 ## 3. Decidir (o raciocínio, antes de produzir)
-1. **Cabe na marca?** Quase Aconteceu é "história curta em série que você conta pra alguém": golpe, quase acidente, reviravolta, mistério, assunto do momento contado como história. Formato de outra coisa (fruta novelinha, boneco) pode entrar **como roupa nova da mesma ideia**. Assunto sem ligação nenhuma vai para outra conta, não aqui.
-2. **É seguro?** Sem conteúdo infantil (made for kids corta comentário e alcance, e conteúdo infantil feito por IA está na mira do YouTube), sem vítima real, sem marca alheia como se fosse nossa, sem trecho de jogo, filme ou música.
+1. **Está viralizando com prova?** Views recentes, crescimento rápido, mais de um criador pegando o mesmo assunto. **O perfil não tem nicho**: a conta é nova e o objetivo é crescer, então vale qualquer assunto que esteja trazendo gente (jogo, desenho bíblico, animal, humor, polêmica, novelinha, curiosidade). Não descartar por "não combina com o perfil".
+2. **Dá para fazer a nossa versão com qualidade?** Copia a ideia e o formato, não o vídeo: se viralizou um cara andando para a esquerda, fazemos o cara andando para a direita, com roteiro, imagem e voz nossos. Precisa de ferramenta que não temos? Anotar e pedir.
+2b. **Passa nas regras fixas do CLAUDE.md?** Nada do Wesley, Krav Magá ou do Victor; sem repost nem trecho de jogo, filme ou música; IA etiquetada; sem enganar; sem vítima real. **Conteúdo para criança:** pode, mas avisar o Victor do custo antes da 1ª vez: marcar "para crianças" desliga comentários, notificações e anúncio personalizado, e conteúdo infantil feito por IA está sendo desmonetizado pelo YouTube (jan e jul/2026). Desenho bíblico ou de animal para todas as idades, marcado como "não é para crianças", não tem esse custo.
 3. **Dá série?** Se dá parte 2, melhor.
-4. **Testa uma coisa por vez.** Duas trilhas no ar ao mesmo tempo: a **série principal** (sempre viva) e a **trilha de teste** (assunto do momento ou formato novo). Mesmo formato com tema diferente mostra qual tema puxa. Mesmo tema com formato diferente mostra qual formato puxa. Nunca mudar tudo junto.
+4. **Testa uma coisa por vez.** Duas trilhas no ar ao mesmo tempo, cada uma com o que está viralizando: a que estiver melhor vira principal, a outra testa assunto ou formato novo. Mesmo formato com tema diferente mostra qual tema puxa. Mesmo tema com formato diferente mostra qual formato puxa. Nunca mudar tudo junto.
 
 ## 4. Volume
 - Produzir **2 a 3 vídeos** na rodada das 7h; postar **2 por dia** (manhã e fim de tarde), um de cada trilha.
 - **Limite do Metricool grátis: 20 publicações por mês** (cada rede conta 1). 2 vídeos por dia em TikTok e YouTube são cerca de 120 por mês. Até o Victor decidir um plano pago, o Metricool fica para o vídeo principal e o resto vai pronto para ele postar no app. Avisar quando a cota passar de 15.
 - Só vídeo (é o que mais distribui hoje). Carrossel só como reaproveitamento, nunca no lugar do vídeo.
+- **Variar o visual**: não ficar preso ao motor do celular. Usar o formato que o viral usa (personagem animado, cena ilustrada, 3D, texto que pula). Ferramentas em ordem de custo: motor em código, imagem grátis (Workers AI FLUX pelo Worker), Flow/Kling grátis do dia, Higgsfield só com lucro.
+- **Divisão de postagem (decidido 21/11):** Instagram e Facebook o Victor posta pelo app (um vai para o outro). TikTok e YouTube: 1 post de manhã pelo Metricool e 1 à tarde/noite que o Victor posta; o bot manda os dois prontos no Telegram (vídeo, legenda, título).
 
 ## 5. Acelerar ou frear (com número, 24 h depois do post, mesma rede)
 | Sinal | Decisão |
