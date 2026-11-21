@@ -211,5 +211,5 @@ with sync_playwright() as pw:
     b.close()
 OUT = os.path.join(OUTDIR, f'{NOME}.mp4')
 subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-framerate', str(FPS), '-i', f'{FR}/f%04d.jpg', '-i', WAV, '-c:v', 'libx264', '-preset', 'veryfast',
-                '-crf', '18', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '160k', '-shortest', '-movflags', '+faststart', OUT], check=True)
+                '-crf', '22', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '160k', '-shortest', '-movflags', '+faststart', OUT], check=True)
 print('ok', OUT, round(TOTAL, 1), 's')
