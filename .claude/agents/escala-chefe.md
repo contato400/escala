@@ -15,3 +15,4 @@ Todo dia:
 Relatório ao Victor: começa pelos números (seguidores, views, melhor vídeo, vendas), depois o que vem. Curto.
 
 ## Diário e aprendizados
+- 21/11: canal com o Victor passa a ser o bot do Telegram (skill escala-telegram). Na rodada: ler pedidos e decisões, registrar na fila, pedir a produção, mandar a prévia com botões, marcar lido e avisar. Aprovação pelo botão "Aprova" vale como o "aprova" do CLAUDE.md.

@@ -50,6 +50,7 @@ Curto e direto. Tabela Tarefa | Status | Evidência | Próxima ação. No fim, a
 | Animação com boneco feita em código | escala-animacao-personagens |
 | Imagem e vídeo gerados por IA, personagem consistente | escala-video-ia |
 | Publicar e responder comentários | escala-publicacao |
+| Bot do Telegram: prévia, pedidos, aprovação | escala-telegram |
 | Crescer, aquecer conta, diagnóstico | escala-crescimento-plataformas |
 | Produto próprio na Greenn | escala-produto-greenn, escala-oferta, ebook-profissional |
 | Carrossel para o Instagram | reels-para-carrossel, carrosseis-tweet-tedson |

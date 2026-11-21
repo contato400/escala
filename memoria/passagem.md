@@ -31,3 +31,9 @@
 - **Feito:** passo a passo em `conteudo/2026-11-21/s01p1-v2/postar.md` (zerar escondendo: arquivar no Instagram, "Somente eu" no TikTok, "Privado" no YouTube; postar com legenda e etiqueta de IA). Fila atualizada: v2 APROVADO; partes 2 a 5 vão ser refeitas no estilo v2, uma por dia a partir de 22/11.
 - **Pendente:** Victor zerar e postar e mandar os links; refazer as partes 2 a 5 (v2) e corrigir o furo da parte 4; Telegram passo 1.
 - **Atenção:** postar hoje encurta o aquecimento (a skill de crescimento pede 2 a 3 dias consumindo o tema antes). Victor decidiu postar.
+
+## 21/11/2026 · Telegram passo 2 adiantado
+- **Pedido:** focar no bot (skills, agentes, bot) e deixar a publicação para depois; Victor disse ter ligado o Remote Control.
+- **Feito:** Worker do chefe, testes, script da fábrica, guia do passo 2, skill `escala-telegram`, índice no CLAUDE.md, ficha do chefe, plano atualizado.
+- **Verificado:** 23 testes do Worker passando; `central.py` testado contra o Worker local (prévia com vídeo de 23 MB, aviso, pedidos, chave errada recusada, lido). Não testado contra o Telegram de verdade (depende dos passos 1 e 2 do Victor).
+- **Pendente:** Victor fazer passo 1 e 2 e mandar "Chefe ok" + endereço; aí pedir a FABRICA_KEY por formulário seguro (request_credential, host do Worker, cabeçalho X-Fabrica-Key) e liberar api do Worker no ambiente; passo 3 (tarefa agendada). Remote Control: lista de computadores desta sessão continua vazia. Conta nova no Metricool para a publicação (decisão do Victor, depois do bot). Parte 2 v2 para amanhã.
