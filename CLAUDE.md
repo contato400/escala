@@ -33,3 +33,26 @@ Radar (3 temas com prova) → Produtor (parte do dia pronta e conferida) → Che
 
 ## 5. Formato de entrega ao Victor
 Curto e direto. Tabela Tarefa | Status | Evidência | Próxima ação. No fim, as decisões dele numeradas. Ao fim de cada etapa, escrever `memoria/passagem.md` (pedido, feito, pendente, verificado).
+
+## 6. Índice das skills (leia o SKILL.md certo antes de agir)
+| Assunto | Skill |
+|---|---|
+| Regras e checklist (sempre) | escala-regras |
+| Memória, passagem, aprendizado (começo e fim) | escala-memoria |
+| O que está viralizando, temas do dia | escala-radar-viral |
+| Ideia nova, série nova, "fora da caixa" | escala-ideias-fora-da-caixa |
+| Roteiro de série, legenda, título | escala-roteiro-serie |
+| Bíblia da série, continuidade, voto do público | escala-biblia-serie |
+| Ganchos, retenção, formatos, CTA | escala-ganchos-retencao |
+| Voz e narração | escala-voz-narracao |
+| Motor de vídeo e formato notícia | escala-producao-video |
+| Edição, conferência, capa, copiar estilo de referência | escala-editor-video (+ ferramentas/estudar_referencia.py) |
+| Animação com boneco feita em código | escala-animacao-personagens |
+| Imagem e vídeo gerados por IA, personagem consistente | escala-video-ia |
+| Publicar e responder comentários | escala-publicacao |
+| Crescer, aquecer conta, diagnóstico | escala-crescimento-plataformas |
+| Produto próprio na Greenn | escala-produto-greenn, escala-oferta, ebook-profissional |
+| Carrossel para o Instagram | reels-para-carrossel, carrosseis-tweet-tedson |
+| Prompt para outra IA | omegaprompt |
+| Página de venda ou visual de produto | ui-ux-pro-max |
+As skills de terceiros (carrossel, ebook, prompt, ui-ux) vieram prontas: use o método delas, mas sempre com a marca Quase Aconteceu e as regras deste arquivo.

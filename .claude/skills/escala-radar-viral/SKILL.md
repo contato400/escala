@@ -11,6 +11,11 @@ description: Aciona quando for descobrir o que está viralizando no TikTok, Inst
 - **Temas que já provaram**: assuntos que mais engajaram no perfil do Wesley (Metricool, YouTube dele), **só como tema**.
 - **Notícia do dia**: golpe novo, caso que todo mundo comenta (nunca explorar vítima).
 
+## Buscas que já trouxeram ouro (21/11)
+- "como criar curtas de animação virais", "stickman animated shorts", "novelinha com IA", "você decide o fim série", "e se" + tema; filtro do último mês, ordenar por views.
+- Achados: séries animadas narradas em segunda pessoa com voto do público (perfil de 0 a 24 mil seguidores em 6 dias, relato do criador); bonecos 2D sobre fundo 3D contando "e se..." (canal com centenas de milhões de views em um mês, relato); novelinhas com personagem consistente. Formatos em `escala-ganchos-retencao`.
+- Para estudar o estilo de um viral com números: `ferramentas/estudar_referencia.py`.
+
 ## O que anotar de cada viral (modelo)
 | Campo | Exemplo |
 |---|---|

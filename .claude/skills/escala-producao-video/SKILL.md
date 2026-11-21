@@ -4,6 +4,8 @@ description: Aciona quando for transformar um roteiro da ESCALA em vídeo vertic
 ---
 # Produção de vídeo (custo zero primeiro)
 
+Régua de qualidade, conferência, capa e estudo de referência: `escala-editor-video`. Animação com boneco: `escala-animacao-personagens`. Clipes gerados por IA: `escala-video-ia`. Voz: `escala-voz-narracao`.
+
 ## Ferramentas
 - **Motor de minissérie** em `motor/` (`gerar_serie.py` + `serie.html`, exemplo em `motor/exemplo.json`): narra (piper-tts, grátis), sincroniza, mixa e renderiza 1080x1920. Antes: `pip install -q --break-system-packages piper-tts`. O rodapé do vídeo já mostra "QUASE ACONTECEU" (em `motor/serie.html`).
 - Campos do JSON: `fala`, `legenda` (`*vermelho`, `^amarelo`, `+verde`), `voz` (narrador/tel/porta), `chamada`, `bolha`, `regra` (cartão "FICA A DICA"), `tensao`, `final` + `mostrar_chamada`, `capa`. Render leva mais de 2 min: rodar em segundo plano.

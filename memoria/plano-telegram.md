@@ -1,0 +1,26 @@
+# Plano: operar a ESCALA pelo Telegram (conversa de 21/11)
+
+## A ideia do dono
+Não depender de abrir o Claude. Um bot no Telegram (grátis) por onde o chefe manda tudo pronto e o dono só responde. Exemplo de mensagem: "Peguei os nichos que estão bombando, fiz as sequências de historinhas, os vídeos estão prontos. Posso postar?" O dono responde "pode" e o agente posta o mesmo conteúdo no TikTok, no Instagram e no YouTube. Inspiração: um bot de Telegram que pesquisa todo dia, manda roteiro, recebe vídeo gravado, edita e devolve pronto para postar.
+
+## Desenho combinado
+1. **Telegram (canal):** bot criado pelo dono no @BotFather. Só responde ao usuário do dono. A chave do bot o dono cola direto no Cloudflare (nunca no chat nem no repositório).
+2. **Chefe no Cloudflare Worker (grátis):** recebe as mensagens, manda cartões com botões Aprova / Ajusta / Recusa, guarda a fila (KV). Conta do Cloudflare **nova e só da ESCALA** (e-mail das contas da ESCALA), para não misturar com nada. O plano grátis aguenta 100 mil pedidos por dia; o bot usa poucas centenas.
+3. **Custo zero de IA no bot:** o bot não precisa "pensar". Botões e comandos fixos (/temas, /produzir, /fila, /status) e texto livre vai para a fila. Quem pensa e produz é a fábrica (abaixo), que roda na assinatura do Claude. Só se um dia quiser conversa livre com resposta na hora, avaliar a API do Gemini grátis ou a do Claude com teto baixo.
+4. **Fábrica = tarefas agendadas do Claude Code na nuvem** neste repositório (ex.: 6h e 14h): radar, roteiro, render do vídeo (voz, legenda, capa), lê os pedidos da fila do bot e manda as prévias no Telegram. Precisa de um ambiente na nuvem com internet liberada para api.telegram.org e para o endereço do Worker.
+5. **Publicador (por último):**
+   - Instagram: API oficial posta Reels (conta profissional ligada a página do Facebook).
+   - YouTube e TikTok: pela API, sem o app aprovado pela plataforma, o vídeo sai privado. Pedir a aprovação ou usar agendador (Postiz, Metricool).
+   - Até lá (2 a 3 semanas, junto com o aquecimento): o bot manda vídeo + legenda prontos e o dono posta em 2 minutos pelo celular, marcando a etiqueta de IA.
+
+## Correções já combinadas
+- **Nada de soltar 50 vídeos de uma vez.** Produzir em lote e aprovar em lote, mas o publicador espalha: 1 por dia por rede no começo; TikTok sobe para 2 a 3 por dia quando entregar acima de 200 views.
+- **Um nicho por conta.** O radar estuda 10 nichos; a conta posta uma série principal e testa o resto com "Reels de teste". Nicho que explodir ganha outro trio de contas.
+- **Amostra antes do lote:** 1 vídeo aprovado antes de produzir o resto no mesmo estilo.
+- Jarvis (assistente de voz no PC) não serve para isso: só funciona com o computador ligado.
+
+## Ordem de construção
+1. Conta Cloudflare nova + bot no @BotFather (o dono faz, com guia passo a passo).
+2. Worker do chefe com allowlist do usuário, botões e fila.
+3. Ambiente na nuvem com rede liberada + tarefa agendada da fábrica que manda prévia no Telegram (testar à mão 2 vezes antes de deixar no automático).
+4. Publicador.
