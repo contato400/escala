@@ -24,3 +24,10 @@
 - **Feito:** bíblia `conteudo/series/a-ligacao/biblia.md`; v2 em `conteudo/2026-11-21/s01p1-v2/` (entregas: MP4 69 s + capa; projeto: JSON e folha; `comparacao.md`). Motor ganhou abertura clara, chamada atendida, silêncio antes de revelação, grave só no impacto, sem_teclas, loudnorm. Lições nas skills de voz e produção.
 - **Decisões pendentes:** postar v1 ou v2 como parte 1; se v2, refazer as partes 2 a 5 no mesmo estilo e corrigir o furo da parte 4.
 - **Verificado:** folha a cada 3 s olhada; transcrição do MP4 confere com o roteiro (Whisper ainda escreve "Nade" para Neide e "Cordo" no 1º segundo; fonema da voz está certo e o áudio cru transcreve "Corta"); -15,4 LUFS, pico -0,3 dB; 1080x1920 30 fps.
+
+## 21/11/2026 · aprovação da v2 e pedido de zerar e postar
+- **Pedido:** Victor aprovou a v2 da parte 1 e pediu para zerar as 3 contas (apagar ou arquivar tudo) e postar o vídeo nas 3, antes do bot.
+- **Bloqueio:** esta sessão não tem acesso às contas. O Metricool só tem a marca do Wesley (proibido usar) e nenhum computador do Victor está conectado (a publicação é pelo navegador logado). Não foi apagado nem postado nada.
+- **Feito:** passo a passo em `conteudo/2026-11-21/s01p1-v2/postar.md` (zerar escondendo: arquivar no Instagram, "Somente eu" no TikTok, "Privado" no YouTube; postar com legenda e etiqueta de IA). Fila atualizada: v2 APROVADO; partes 2 a 5 vão ser refeitas no estilo v2, uma por dia a partir de 22/11.
+- **Pendente:** Victor zerar e postar e mandar os links; refazer as partes 2 a 5 (v2) e corrigir o furo da parte 4; Telegram passo 1.
+- **Atenção:** postar hoje encurta o aquecimento (a skill de crescimento pede 2 a 3 dias consumindo o tema antes). Victor decidiu postar.
