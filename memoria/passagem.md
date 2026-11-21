@@ -66,3 +66,8 @@
 - 7 indicadores da escala-medicao-e-teste: aprovados.
 - Travas técnicas: explicado; testar numa rodada antes de ligar (pendente).
 - Link do PR dá 404 para o Victor: repositório privado; abrir logado no GitHub da conta dona de contato400/escala.
+
+## 21/11/2026 · passo 3 concluído
+- Chave trocada pelo Victor; formulário salvo; `central.py pedidos` respondeu (pedidos e conversa visíveis; IA do bot conversando).
+- Rodada manual 1: aviso respondendo a pergunta de 13h11 (Insta/Facebook), prévia "TESTE" com vídeo e botões enviada (id teste-central), 4 pedidos de teste lidos, `--rodada` registrado, linha em `memoria/registro-rodadas.csv`.
+- Pendente: Victor apertar um botão na prévia de teste; rodada manual 2 com vídeo real; criar a tarefa agendada.
