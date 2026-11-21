@@ -11,8 +11,9 @@ description: Aciona SEMPRE, em toda tarefa da operação ESCALA (contas própria
 4. Personagem fictício sem enganar: sem depoimento falso, sem "eu usei", sem fingir profissão, sem promessa de dinheiro fácil, sem vítima real, sem criança exposta?
 5. Fatos (golpe, número, lei, estatística) conferidos numa fonte confiável com data?
 6. Aviso de publicidade em afiliado/venda?
-7. Português simples, sem travessão, sem cara de IA (sem três frases curtas em sequência, sem clichê)?
-8. Vai para a fila de aprovação (`aprovacao/fila.md`) e só é publicado com "aprova" do Victor?
+7. Português simples, sem travessão, sem cara de IA (sem três frases curtas em sequência, sem clichê)? Rode `python3 ferramentas/conferir_texto.py <roteiro, legenda, descrição>`: tem de dar código 0.
+8. **Varredura do inventado:** compare roteiro, legenda e texto de venda com a fonte e liste número, preço, prazo, selo, depoimento ou promessa que não veio dela. Tire ou troque por `[FALTA: ...]`, e repita até a lista zerar (método em `escala-revisor`).
+9. Vai para a fila de aprovação (`aprovacao/fila.md`) e só é publicado com "aprova" do Victor?
 
 Se qualquer item falhar: corrija antes de entregar. Na dúvida sobre direito autoral ou política da plataforma, não publique e pergunte.
 

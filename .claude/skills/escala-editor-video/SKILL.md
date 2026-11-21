@@ -37,6 +37,17 @@ Arquivo: `qa_<serie>_<formato>_vN-<o-que-mudou>_AAAA-MM-DD.mp4`. Nunca "final".
 2. Volume (`ffmpeg -af volumedetect`), duração certa, sincronia de voz, imagem e legenda.
 3. Corte no meio de palavra? asterisco de marcação sobrando? texto gerado por IA dentro da imagem? Corrigir.
 4. Checklist da `escala-regras`.
+5. **Confira o MP4 exportado, não a prévia** (livro 10): a prévia aprova a edição, o arquivo confirma a entrega. Abra o arquivo, veja início, trecho com inserção, final e áudio, no tamanho de celular. **Quadro parado mostra posição, não prova sincronia** de voz nem de legenda: ouça com som. Liste os cortes feitos (o que saiu e por quê) e relate só o intervalo realmente verificado.
+6. Quem confere é outra chamada, a `escala-revisor` (só lê, devolve a falha a quem errou, no máximo 2 voltas). Passe de olhos frescos por último: veja como espectador de primeira vez, sem checklist; algo ficou desigual (personagem sem sombra, cena sem som)? Parece de propósito ou enchimento?
+
+### Comandos ffmpeg úteis (pacotes-zip, receitas)
+- **Quadro para encadear clipe, em PNG** (nunca jpg, que assa compressão no clipe seguinte): `ffmpeg -sseof -0.1 -i seg.mp4 -update 1 -frames:v 1 -q:v 1 final.png`
+- **Clipe termina parado?** `ffmpeg -i raw.mp4 -vf "tblend=all_mode=difference,signalstats,metadata=print:key=lavfi.signalstats.YAVG" -f null -` (brilho de diferença baixo no fim = descansou; alto = ainda deriva).
+- **Corte de cauda** (bom até o personagem mexer de novo perto do fim): `ffmpeg -i raw.mp4 -t 4.3 -c copy cortado.mp4`, e se não fechar limpo, recodifique. Mais barato que regerar.
+- **Crossfade de resgate numa junção que aparece:** `xfade=transition=fade:duration=0.25:offset=<duração do 1º - 0.25>` (dois clipes de 6 s: offset 5.75). Corte seco é o teste mais honesto; fusão só esconde furo (livro 09).
+- **Concatenar** em um só filtro `concat` e codificar uma vez; clipes já codificados com parâmetros diferentes travam na junção.
+- **Contraste da legenda contra o pior quadro, não o médio** (texto sobre fundo em movimento): meta 4,5:1 em texto corrido e 3,5:1 em rótulo. Ajuda: sombra em 3 camadas, faixa escura só enquanto a legenda está ligada, chip com fundo semitransparente. Tire os quadros do trecho com `fps=2` e meça a luminância sob a legenda (script ainda por fazer: `ferramentas/contraste_legenda.py`, ideia nossa, não testada).
+- Brutos e revisões em `projeto/brutos/`, nunca na pasta que o Victor ou o Metricool posta. Abra o resultado de cada encode antes de usar.
 
 ## 6. Copiar o estilo de um viral (sem copiar o vídeo)
 Pedir "faz igual" faz a IA olhar meia dúzia de quadros e inventar o resto. Faça a **tabela**:
@@ -60,4 +71,4 @@ v1 é a base aprovada. Cada versão nova muda **uma** coisa e o nome diz qual. O
 Só trilha sintetizada por nós (o motor gera), biblioteca livre com licença comercial, ou a biblioteca da própria rede na hora de postar. Nada de música famosa. Voz sempre acima de tudo; trilha cai na tensão.
 
 ## 10. Rotina para gastar menos
-Um vídeo por vez. Amostra de 8 s aprovada antes do vídeo inteiro quando o estilo for novo. Corrigir por trecho ("de 0:42 a 0:48 troque a legenda"), nunca refazer tudo. Aprovado? perguntar se vale para os próximos do mesmo estilo; se sim, registrar aqui.
+Um vídeo por vez. Amostra aprovada antes do vídeo inteiro quando o estilo for novo: **8 s** para estilo simples, **10 a 15 s** quando tem movimento (câmera andando, moldura, cartões, 3D), porque 8 s não mostram a transição. A amostra tem fala, legenda, enquadramento e pelo menos uma inserção; abertura sozinha não valida o estilo. Em lote, aprove a 1ª peça antes das outras (máximo 3). Corrigir por trecho ("de 0:42 a 0:48 troque a legenda"), nunca refazer tudo. Aprovado? perguntar se vale para os próximos do mesmo estilo; se sim, registrar aqui.
