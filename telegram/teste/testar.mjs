@@ -84,4 +84,24 @@ r = await fab('/fabrica/arquivo/GRANDE'); ok(r.status === 200 && (await r.text()
 globalThis.fetch = fetchAntes;
 ok((await fab('/fabrica/arquivo/GRANDE', {}, 'errada')).status === 401, 'baixar print sem chave é recusado');
 
+// --- correções do redator de segurança ---
+kv.clear();
+const fv = new FormData(); fv.append('id', 'x1'); fv.append('titulo', 'Teste'); fv.append('legenda', 'L');
+await fab('/fabrica/previa', { method: 'POST', body: fv });
+await tgBot(111, 'a:x1'); await tgBot(111, 'a:x1');
+ok([...kv.values()].filter((v) => v.includes('"publicar"')).length === 1, 'Aprova apertado 2 vezes cria 1 publicação só');
+const upd = { update_id: 777, message: { from: { id: 111 }, chat: { id: 111 }, text: '/produzir algo repetido' } };
+for (let i = 0; i < 2; i++) await worker.fetch(new Request(B + '/telegram', { method: 'POST', headers: { 'X-Telegram-Bot-Api-Secret-Token': 'W' }, body: JSON.stringify(upd) }), env);
+ok([...kv.values()].filter((v) => v.includes('algo repetido')).length === 1, 'mensagem reenviada pelo Telegram não duplica pedido');
+await tgMsg(111, '/pausa'); r = await (await fab('/fabrica/pedidos')).json(); ok(!!r.pausa, '/pausa chega na fábrica');
+await tgMsg(111, '/retomar'); r = await (await fab('/fabrica/pedidos')).json(); ok(r.pausa === null, '/retomar libera');
+const env2 = { ...env, FABRICA_KEY_NOVA: 'F2' }; r = await worker.fetch(new Request(B + '/fabrica/pedidos', { headers: { 'X-Fabrica-Key': 'F2' } }), env2);
+ok(r.status === 200, 'chave nova aceita durante a troca');
+await fab('/fabrica/estado', { method: 'POST', body: JSON.stringify({ rodada: '7h ok' }) });
+enviados.length = 0; await worker.scheduled({}, env, { waitUntil: (p) => p }); await new Promise((r) => setTimeout(r, 10));
+ok(enviados.length === 0, 'conferência quieta quando a rodada deu sinal');
+kv.set('estado:ultima_rodada', JSON.stringify({ quando: new Date(Date.now() - 9 * 36e5).toISOString(), nota: '7h ok' }));
+await worker.scheduled({}, env, { waitUntil: (p) => p }); await new Promise((r) => setTimeout(r, 10));
+ok(enviados.some((e) => String(e.corpo.text).includes('não dá sinal')), 'conferência avisa quando a fábrica some');
+
 console.log(falhas ? `\n${falhas} falha(s)` : '\nTudo certo'); process.exit(falhas ? 1 : 0);

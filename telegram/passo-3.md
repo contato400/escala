@@ -44,3 +44,12 @@ Mande para o bot:
 - "oi, o que você faz?" → ele tem que responder com frase própria (não só "Anotado").
 - "quero um vídeo de GTA 6 sobre as notas dos jogadores" → ele confirma e diz que passa para a fábrica.
 Se ele só responder "Anotado na fila da fábrica", a vinculação `AI` (item C) não pegou: confira o nome `AI`.
+
+## F. (Opcional, recomendado) Alerta se a fábrica parar
+Worker `chefe` > **Configurações** > **Gatilhos** (Triggers) > **Gatilhos Cron** > **Adicionar** > escreva `0 */3 * * *` (a cada 3 horas) > Salvar.
+O chefe confere se a fábrica deu sinal nas últimas 7 horas. Se não deu, te manda "⚠️ A fábrica não dá sinal há X h". Grátis.
+
+## Comandos novos no bot
+- `/pausa`: freio de emergência. A fábrica para de produzir e publicar.
+- `/retomar`: libera de novo.
+- Mandar **print** (foto) de métrica: o bot guarda e a fábrica lê na rodada seguinte.

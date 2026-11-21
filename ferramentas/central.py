@@ -5,7 +5,7 @@ Uso:
   python3 ferramentas/central.py previa <id> "<título>" <legenda.txt> [video.mp4]
   python3 ferramentas/central.py pedidos            # imprime JSON com pedidos e itens
   python3 ferramentas/central.py lido <chave_pedido>... [--itens id1,id2]
-  python3 ferramentas/central.py estado [--temas arq.txt] [--status arq.txt] [--aviso "texto"]
+  python3 ferramentas/central.py estado [--temas arq.txt] [--status arq.txt] [--aviso "texto"] [--rodada "7h ok: 2 prévias"]
   python3 ferramentas/central.py arquivo <file_id> <saida.jpg>   # baixa um print que o Victor mandou (pedido tipo "print", campo ref)
 
 Endereço: variável ESCALA_CENTRAL (ex.: https://chefe.quaseaconteceu.workers.dev).
@@ -64,6 +64,8 @@ def main(a):
                 dados[a[i][2:]] = open(a[i + 1], encoding='utf-8').read(); i += 2
             elif a[i] == '--aviso':
                 dados['aviso'] = a[i + 1]; i += 2
+            elif a[i] == '--rodada':
+                dados['rodada'] = a[i + 1]; i += 2
             else:
                 sys.exit(f'Opção desconhecida: {a[i]}')
         print(post_json('/fabrica/estado', dados))
