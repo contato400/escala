@@ -51,7 +51,7 @@ const AJUDA = [
   '/temas  os temas do dia que o radar achou',
   '/produzir <o que quer>  pedir parte ou série nova',
   '/status  números das contas e o que está no ar',
-  'Qualquer outra mensagem vai para a fila de pedidos da fábrica.',
+  'Ou só conversa comigo: pede vídeo, corrige, reclama. Eu entendo e passo para a fábrica.',
 ].join('\n');
 
 // ---------- Telegram ----------
@@ -118,12 +118,47 @@ async function telegram(req, env) {
       } else if (texto.startsWith('/')) {
         await dizer(env, 'Não conheço esse comando.\n\n' + AJUDA);
       } else {
-        await novoPedido(env, 'livre', texto);
-        await dizer(env, '📝 Anotado na fila da fábrica.');
+        await conversar(env, texto, ajusteDe);
       }
     }
   }
   return new Response('ok');
+}
+
+// ---------- Conversa com IA grátis (Workers AI, vinculação "AI") ----------
+// Sem a vinculação AI o bot continua funcionando: só anota o pedido.
+const MODELO = '@cf/meta/llama-3.3-70b-instruct-fp8-fast';
+const PERSONA = `Você é o social media da Quase Aconteceu, contas de vídeo curto (TikTok, Instagram Reels, YouTube Shorts) de histórias curtas em série e assuntos do momento. Você conversa no Telegram só com o Victor, o dono.
+Como você trabalha: a fábrica (outro sistema) pesquisa o que está viralizando em cada rede, produz os vídeos e manda prévias aqui com botões Aprova, Ajusta e Recusa, nas rodadas das 7h, 12h e 17h. Você NÃO produz vídeo agora nem publica: você entende o que o Victor quer, confirma em poucas palavras e passa para a fábrica.
+Regras da casa: nada ligado ao Wesley, Krav Magá Caveira ou ao Victor; nada de repost ou trecho com direito autoral; IA sempre etiquetada; não enganar (sem depoimento falso, sem prometer dinheiro); toda publicação só com aprovação do Victor.
+Responda em português do Brasil, curto (até 4 frases), direto, sem travessão, como um colega de trabalho. Nunca invente número, resultado ou coisa que você não sabe: diga que a fábrica traz na próxima rodada. Use só o contexto abaixo para falar da fila, temas e números.
+No fim da resposta, numa linha separada, escreva exatamente uma destas marcações:
+ACAO: produzir :: <o que produzir, resumido>
+ACAO: ajuste :: <o que mudar, resumido>
+ACAO: nenhuma`;
+
+async function conversar(env, texto, ajusteDe) {
+  const hist = (await env.FILA.get('estado:conversa', 'json')) || [];
+  let resposta = null, tipo = 'livre', resumo = texto;
+  if (env.AI) {
+    try {
+      const itens = (await listar(env, 'item:')).slice(-5).map((i) => `${i.titulo} (${i.status})`).join('; ') || 'nenhum';
+      const ctx = `Contexto agora. Prévias: ${itens}. Temas: ${(await env.FILA.get('estado:temas')) || 'ainda não'}. Números: ${(await env.FILA.get('estado:status')) || 'ainda não'}.`;
+      const out = await env.AI.run(MODELO, {
+        messages: [{ role: 'system', content: PERSONA + '\n\n' + ctx }, ...hist.slice(-8), { role: 'user', content: texto }],
+        max_tokens: 350, temperature: 0.4,
+      });
+      const bruto = String(out?.response || '').trim();
+      const m = bruto.match(/\n?\s*ACAO:\s*(produzir|ajuste|nenhuma)\s*(?:::\s*(.*))?\s*$/i);
+      resposta = (m ? bruto.slice(0, m.index) : bruto).replace(/—/g, ',').trim() || null;
+      if (m && m[1].toLowerCase() !== 'nenhuma') { tipo = m[1].toLowerCase(); resumo = (m[2] || texto).trim(); }
+    } catch (e) { resposta = null; }
+  }
+  // Toda mensagem vai para a fábrica, com o texto original (ela decide com mais calma).
+  await novoPedido(env, tipo, tipo === 'livre' ? texto : `${resumo}\n(mensagem original: ${texto})`, tipo === 'ajuste' ? ajusteDe : null);
+  await dizer(env, resposta || '📝 Anotado na fila da fábrica.');
+  hist.push({ role: 'user', content: texto.slice(0, 600) }, { role: 'assistant', content: (resposta || 'Anotado.').slice(0, 600) });
+  await env.FILA.put('estado:conversa', JSON.stringify(hist.slice(-12)));
 }
 
 // ---------- Fábrica (tarefas agendadas do Claude Code) ----------
@@ -159,7 +194,7 @@ async function fabrica(req, env, caminho) {
   }
 
   if (caminho === '/fabrica/pedidos' && req.method === 'GET') {
-    return json({ pedidos: await listar(env, 'pedido:'), itens: await listar(env, 'item:') });
+    return json({ pedidos: await listar(env, 'pedido:'), itens: await listar(env, 'item:'), conversa: (await env.FILA.get('estado:conversa', 'json')) || [] });
   }
 
   if (caminho === '/fabrica/lido' && req.method === 'POST') {

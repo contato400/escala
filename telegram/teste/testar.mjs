@@ -46,4 +46,25 @@ ok(ultimo().corpo.text === 'Temas prontos', 'aviso chega ao dono');
 await tgMsg(111, '/temas'); ok(ultimo().corpo.text.includes('INSS'), '/temas mostra o que a fábrica mandou');
 ok((await worker.fetch(new Request(B + '/configurar?chave=errada'), env)).status === 401, 'configurar com chave errada é recusado');
 r = await (await worker.fetch(new Request(B + '/configurar?chave=F'), env)).json(); ok(r.webhook === 'ok' && enviados.some((e) => e.metodo === 'setWebhook' && e.corpo.secret_token === 'W' && e.corpo.url === B + '/telegram'), 'configurar liga o webhook com o segredo');
+// --- conversa com IA (vinculação AI simulada) ---
+const chamadasIA = [];
+env.AI = { run: async (modelo, op) => { chamadasIA.push(op); const u = op.messages.at(-1).content;
+  if (u.includes('quebra')) throw new Error('fora do ar');
+  if (u.includes('GTA')) return { response: 'Fechado, vou pedir uma série de GTA 6 para hoje à tarde — com história nossa.\nACAO: produzir :: série curta sobre GTA 6 para hoje' };
+  if (u.includes('voz')) return { response: 'Entendi, a voz do narrador ficou robótica. Passo para a fábrica trocar.\nACAO: ajuste :: voz do narrador mais natural' };
+  return { response: 'Tudo certo por aqui. A fábrica traz os números na próxima rodada.\nACAO: nenhuma' }; } };
+kv.clear();
+await tgMsg(111, 'quero uma série de GTA 6 hoje');
+ok(ultimo().corpo.text.startsWith('Fechado') && !ultimo().corpo.text.includes('ACAO') && !ultimo().corpo.text.includes('—'), 'IA responde natural, sem a marcação e sem travessão');
+ok([...kv.values()].some((v) => v.includes('"produzir"') && v.includes('GTA 6')), 'IA classifica como produzir e vira pedido');
+await tgMsg(111, 'não gostei da voz');
+ok([...kv.values()].some((v) => v.includes('"ajuste"') && v.includes('mensagem original')), 'IA classifica correção como ajuste com a mensagem original');
+await tgMsg(111, 'como estamos?');
+ok(chamadasIA.at(-1).messages.length >= 5, 'IA recebe o histórico da conversa');
+ok(chamadasIA.at(-1).messages[0].content.includes('Contexto agora'), 'IA recebe o contexto da fila');
+await tgMsg(111, 'isso quebra a IA');
+ok(ultimo().corpo.text.includes('Anotado'), 'IA fora do ar: bot ainda responde e anota');
+r = await (await fab('/fabrica/pedidos')).json(); ok(r.conversa.length >= 6 && r.pedidos.length === 4, 'fábrica lê a conversa e os 4 pedidos');
+await tgMsg(999, 'oi'); ok(chamadasIA.length === 4, 'estranho não gasta IA');
+
 console.log(falhas ? `\n${falhas} falha(s)` : '\nTudo certo'); process.exit(falhas ? 1 : 0);

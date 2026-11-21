@@ -4,10 +4,10 @@ description: Aciona quando a fábrica ou o chefe da ESCALA for mandar prévia, a
 ---
 # Central no Telegram
 
-O Victor opera a ESCALA pelo bot. O **chefe** é um Cloudflare Worker (`telegram/worker.js`), sem IA: guarda a fila no KV, responde só ao Id do dono e mostra os botões. A **fábrica** (tarefas agendadas do Claude Code no ambiente de nuvem "escala") produz e conversa com o chefe por `ferramentas/central.py`. O token do Telegram nunca sai do Cloudflare.
+O Victor opera a ESCALA pelo bot. O **chefe** é um Cloudflare Worker (`telegram/worker.js`): comandos e botões fixos, e conversa livre com a IA grátis do Cloudflare (Workers AI, vinculação `AI`; sem ela o bot só anota). Ele guarda a fila no KV, responde só ao Id do dono e mostra os botões. A **fábrica** (tarefas agendadas do Claude Code no ambiente de nuvem "escala") produz e conversa com o chefe por `ferramentas/central.py`. O token do Telegram nunca sai do Cloudflare.
 
 ## Rodada da fábrica (6h e 14h)
-1. **Ler** `python3 ferramentas/central.py pedidos`. Vem `pedidos` (tipo `produzir`, `livre`, `ajuste` com `ref`, `publicar` com `ref`) e `itens` (prévias com `status`: aguardando, aprovado, ajustar, recusado).
+1. **Ler** `python3 ferramentas/central.py pedidos`. Vem `conversa` (últimas mensagens com o Victor: ler tudo), `pedidos` (tipo `produzir`, `livre`, `ajuste` com `ref`, `publicar` com `ref`) e `itens` (prévias com `status`: aguardando, aprovado, ajustar, recusado).
 2. **Registrar** em `aprovacao/fila.md`: item aprovado vira linha APROVADO com data e "via Telegram". Recusado sai da fila com o motivo, se veio. Esse registro vale como o "aprova" do CLAUDE.md.
 3. **Fazer** o que foi pedido (radar, roteiro, vídeo, ajuste), seguindo as skills de sempre e conferindo tudo antes.
 4. **Mandar** cada peça pronta: `python3 ferramentas/central.py previa <id> "<título curto>" legenda.txt video.mp4` (até 49 MB; acima disso, comprimir com crf 23). O `id` é o da fila (ex.: 20261122-1).

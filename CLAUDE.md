@@ -38,6 +38,7 @@ Curto e direto. Tabela Tarefa | Status | Evidência | Próxima ação. No fim, a
 | Assunto | Skill |
 |---|---|
 | Regras e checklist (sempre) | escala-regras |
+| Rodada da fábrica, o que produzir em cada rede, acelerar ou frear (o cérebro) | escala-social-media |
 | Memória, passagem, aprendizado (começo e fim) | escala-memoria |
 | O que está viralizando, temas do dia | escala-radar-viral |
 | Ideia nova, série nova, "fora da caixa" | escala-ideias-fora-da-caixa |
