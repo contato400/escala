@@ -100,7 +100,7 @@ Nota de segurança: o capítulo 8 traz uma skill de exemplo maliciosa ("turbo-pr
 - **Hooks** (comando que o Claude Code roda sozinho num evento, sem depender do modelo): `SessionStart, UserPromptSubmit, PreToolUse (pode BARRAR a ação), PostToolUse, Notification, SubagentStart, SubagentStop, Stop`; tipos `command, prompt, agent, http, mcp_tool` (l.7923-7925). "O que nunca pode acontecer vai para uma trava fora do texto" (l.424-428).
 - **Sugestões concretas para a ESCALA** (a regra fixa mais importante é "publicação só com aprova do Victor" e "zero ligação com Wesley/Victor"):
   1. `PreToolUse` com matcher nas ferramentas de publicar/agendar (Metricool `createScheduledPost`, `tiktok_publish`, etc.) que consulta `aprovacao/fila.md` e barra se o ID da peça não tiver linha APROVADO (script curto de shell/python).
-  2. `PostToolUse`/`Stop` que roda `grep -iE "caveira|wesley|krav|gimenez"` (e travessão "—") nos arquivos novos de `conteudo/` e falha se achar. Trava técnica para as regras 1 e "sem travessão".
+  2. `PostToolUse`/`Stop` que roda `grep -iE "caveira|wesley|krav|gimenez"` (e o caractere de travessão) nos arquivos novos de `conteudo/` e falha se achar. Trava técnica para as regras 1 e "sem travessão".
   3. `deny` em `Edit(./aprovacao/fila.md)` fora do fluxo? Cuidado: o chefe precisa editar a fila; melhor só barrar o campo APROVADO via hook que compara com o que o Telegram recebeu (decisão do botão). Anotar como ideia, não como regra pronta.
   4. `deny` `Read(./.env)` se algum dia houver `.env` local (CLAUDE.md já proíbe segredos em arquivo).
   Limitação a conferir antes de prometer ao Victor: não consegui verificar se hooks e `deny` de `.claude/settings.json` valem em sessão agendada na nuvem; testar em 1 rodada e registrar.
