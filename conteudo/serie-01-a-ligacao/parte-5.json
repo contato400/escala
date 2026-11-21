@@ -1,0 +1,117 @@
+{
+ "nome": "s01p5",
+ "selo": "FINAL",
+ "pix_tela": {
+  "para": "Para: OPERAÇÃO SIGILOSA<br><span style='font-size:32px;color:#666'>\"da polícia\"</span>",
+  "valor": "R$ 5.000,00"
+ },
+ "trechos": [
+  {
+   "fala": "Ontem, um falso delegado ligou pra Dona Neide pedindo um Pix pra pegar os golpistas.",
+   "legenda": "Ontem: o falso ^delegado ligou.",
+   "telefone": "on",
+   "chamada": {
+    "nome": "Delegacia de Polícia",
+    "icone": "police"
+   }
+  },
+  {
+   "fala": "É uma operação sigilosa. Faça um Pix de cinco mil reais pra gente rastrear a quadrilha.",
+   "voz": "tel",
+   "bolha": "Operação sigilosa. Faça um Pix de R$ 5 mil pra rastrear a quadrilha."
+  },
+  {
+   "fala": "Ela abriu o Pix. Cinco mil reais.",
+   "legenda": "Ela abriu o *Pix.",
+   "pix": "on"
+  },
+  {
+   "fala": "Mas dessa vez ela já sabia.",
+   "legenda": "Mas dessa vez ela já ^sabia."
+  },
+  {
+   "fala": "Polícia não pede Pix. Nunca.",
+   "pix": "cancelar",
+   "regra": "Polícia NUNCA pede Pix."
+  },
+  {
+   "fala": "E ela respondeu: vou desligar e ir na delegacia, com o meu neto.",
+   "legenda": "\"Vou na delegacia com meu ^neto.\"",
+   "encerrar": true
+  },
+  {
+   "fala": "Meia hora depois, bateram na porta.",
+   "legenda": "Bateram na *porta.",
+   "telefone": "off",
+   "pix": "off",
+   "porta": "on",
+   "batida": true
+  },
+  {
+   "fala": "Vó, sou eu! O Caio!",
+   "voz": "porta",
+   "voz_porta": "Vó, sou eu! O Caio!"
+  },
+  {
+   "fala": "Ela não abriu na hora. Primeiro ligou pro celular dele, e ouviu tocar do lado de fora.",
+   "legenda": "Primeiro ela ^ligou pra conferir."
+  },
+  {
+   "fala": "Era ele. Ela abriu a porta e chorou no abraço do neto.",
+   "legenda": "Era ele. +Abraço.",
+   "porta": "off"
+  },
+  {
+   "fala": "No dia seguinte, os dois foram ao banco. Cartão novo, senha nova e boletim de ocorrência feito.",
+   "legenda": "Cartão novo, senha nova e +boletim."
+  },
+  {
+   "fala": "E o Caio deixou o limite do Pix bem baixo no período da noite, no celular dela.",
+   "legenda": "Limite do Pix +baixo à noite."
+  },
+  {
+   "fala": "Grava essas regras.",
+   "legenda": "Grava essas ^regras:",
+   "lista": "on",
+   "limpar_legenda": false
+  },
+  {
+   "fala": "Banco não pede senha.",
+   "item": "Banco não pede senha."
+  },
+  {
+   "fala": "Banco não busca cartão.",
+   "item": "Banco não busca cartão."
+  },
+  {
+   "fala": "Conta segura não existe.",
+   "item": "Conta segura não existe."
+  },
+  {
+   "fala": "Polícia não pede Pix.",
+   "item": "Polícia não pede Pix."
+  },
+  {
+   "fala": "E na dúvida, desliga e liga você, no número que está no verso do cartão.",
+   "item": "Na dúvida, desligue e ligue você."
+  },
+  {
+   "fala": "Quase aconteceu. Manda esse vídeo pra alguém que precisa ver.",
+   "final": {
+    "selo": "FIM DA SÉRIE",
+    "pergunta": "Quase aconteceu. Manda pra quem precisa ver.",
+    "chamada": "Segue para a <span class=k>próxima história</span><small>começa amanhã</small>"
+   }
+  },
+  {
+   "fala": "Segue pra não perder a próxima história.",
+   "mostrar_chamada": true
+  }
+ ],
+ "capa": {
+  "selo": "FINAL",
+  "titulo": "QUASE<br><span style='color:#ff3341'>ACONTECEU</span>",
+  "faixa": "As 5 regras que salvaram a Dona Neide",
+  "quadro": 8.0
+ }
+}

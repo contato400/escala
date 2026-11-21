@@ -1,0 +1,3 @@
+data,hora,rodada,leu_pedidos,previas,avisos,resultado
+2026-11-21,15:56,manual-1,sim,1,1,ok
+2026-11-21,16:13,manual-2,sim,0,1,ok (radar)

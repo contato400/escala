@@ -38,6 +38,7 @@ Curto e direto. Tabela Tarefa | Status | Evidência | Próxima ação. No fim, a
 | Assunto | Skill |
 |---|---|
 | Regras e checklist (sempre) | escala-regras |
+| Rodada da fábrica, o que produzir em cada rede, acelerar ou frear (o cérebro) | escala-social-media |
 | Memória, passagem, aprendizado (começo e fim) | escala-memoria |
 | O que está viralizando, temas do dia | escala-radar-viral |
 | Ideia nova, série nova, "fora da caixa" | escala-ideias-fora-da-caixa |
@@ -51,6 +52,15 @@ Curto e direto. Tabela Tarefa | Status | Evidência | Próxima ação. No fim, a
 | Imagem e vídeo gerados por IA, personagem consistente | escala-video-ia |
 | Assunto do momento (GTA 6), afiliado, modelo de IA | escala-hype-e-afiliado |
 | Publicar e responder comentários | escala-publicacao |
+| Bot do Telegram: prévia, pedidos, aprovação | escala-telegram |
+| Rodada agendada, sinal de vida, pausa, teste do bot e das skills | escala-rotinas-autonomas |
+| Chaves, segredos, conteúdo de terceiros, instalar skill ou conector | escala-seguranca |
+| Medir post, testar, flop, print de métrica, relatório ao Victor | escala-medicao-e-teste |
+| Revisar antes da fila (inventado, cara de IA, 3 ganchos com juiz) | escala-revisor (+ ferramentas/conferir_texto.py) |
+| Da história aos planos: storyboard, câmera, continuidade, personagem fixo | escala-direcao-cena |
+| Regra de rede, rótulo de IA, criança, licença de ferramenta, monetização | escala-conformidade-plataformas |
+| Gastar ou não com gerador, voz, API, assinatura | escala-custos |
+| Escrever pedido para qualquer IA (agente, gerador, Workers AI) | escala-pedir-a-ia |
 | Crescer, aquecer conta, diagnóstico | escala-crescimento-plataformas |
 | Produto próprio na Greenn | escala-produto-greenn, escala-oferta, ebook-profissional |
 | Carrossel para o Instagram | reels-para-carrossel, carrosseis-tweet-tedson |

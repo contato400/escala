@@ -1,0 +1,122 @@
+{
+ "nome": "qa_ligacao_p1_v2-skills-novas_2026-11-21",
+ "selo": "PARTE 1",
+ "inicio": 0.6,
+ "abertura": true,
+ "pulso": false,
+ "grave_pad": false,
+ "trechos": [
+  {
+   "fala": "Corta o cartão ao meio. Mas não estraga o chipe.",
+   "voz": "tel",
+   "telefone": "on",
+   "chamada": {
+    "nome": "Central de Segurança",
+    "icone": "bank",
+    "atendida": true
+   },
+   "bolha": "Corta o cartão ao meio. Mas não estraga o chip.",
+   "legenda": "Ele pediu o *cartão dela.",
+   "sem_teclas": true
+  },
+  {
+   "fala": "E a Dona Neide já estava com a tesoura na mão.",
+   "legenda": "Ela já pegou a ^tesoura.",
+   "tensao": true
+  },
+  {
+   "fala": "Como ela chegou nisso? Dez minutos antes, o celular tocou.",
+   "legenda": "10 minutos ^antes...",
+   "chamada": {
+    "nome": "Central de Segurança",
+    "icone": "bank"
+   },
+   "fim_abertura": true,
+   "antes": 0.2
+  },
+  {
+   "fala": "Boa noite, dona Neide. Aqui é o Rodrigo, da central de segurança do seu banco.",
+   "voz": "tel",
+   "bolha": "Boa noite, dona Neide. Aqui é o Rodrigo, da segurança do banco."
+  },
+  {
+   "fala": "Tem uma compra de quatro mil, oitocentos e noventa reais no seu cartão, em Manaus. Foi a senhora?",
+   "voz": "tel",
+   "bolha": "Compra de R$ 4.890 em Manaus. Foi a senhora?"
+  },
+  {
+   "fala": "Ela nunca tinha ido pra Manaus. Mas gelou com o que ele falou depois.",
+   "legenda": "Ela nunca foi pra *Manaus."
+  },
+  {
+   "fala": "Ele sabia o nome completo dela, o CPF e o final do cartão.",
+   "legenda": "Ele sabia o ^nome, o ^CPF e o ^final do cartão.",
+   "silencio": true,
+   "antes": 0.5,
+   "tensao": true
+  },
+  {
+   "fala": "Fica tranquila, a gente vai bloquear agora. Só confirma a sua senha no teclado.",
+   "voz": "tel",
+   "limpar_bolhas": true,
+   "bolha": "Fica tranquila. Só confirma a sua senha no teclado."
+  },
+  {
+   "fala": "Ela digitou os quatro números, com o dedo tremendo.",
+   "legenda": "Ela digitou a *senha.",
+   "dedo": true
+  },
+  {
+   "fala": "Pausa aqui: banco nenhum pede a sua senha por telefone. Nunca.",
+   "regra": "Banco NUNCA pede senha por telefone."
+  },
+  {
+   "fala": "Perfeito. Agora presta atenção, que é muito importante.",
+   "voz": "tel",
+   "limpar_bolhas": true,
+   "bolha": "Perfeito. Agora presta atenção."
+  },
+  {
+   "fala": "Pega uma tesoura e corta o cartão ao meio. Mas não estraga o chipe.",
+   "voz": "tel",
+   "bolha": "Corta o cartão ao meio. Mas não estraga o chip."
+  },
+  {
+   "fala": "E por que o chipe inteiro? Porque com o chipe, ele faz compras no nome dela.",
+   "legenda": "Com o ^chip, ele compra no nome dela."
+  },
+  {
+   "fala": "Um funcionário nosso já está na sua rua pra buscar o cartão.",
+   "voz": "tel",
+   "bolha": "Um funcionário já está na sua rua.",
+   "tensao": true
+  },
+  {
+   "fala": "Nove e quinze da noite. E ela estava sozinha em casa.",
+   "legenda": "E ela estava *sozinha em casa."
+  },
+  {
+   "fala": "A Dona Neide encostou a tesoura no cartão.",
+   "legenda": "Ela encostou a *tesoura.",
+   "silencio": true,
+   "antes": 0.6,
+   "escurecer": true
+  },
+  {
+   "fala": "Segue pra ver a parte dois amanhã.",
+   "mostrar_chamada": true,
+   "antes": 0.3,
+   "final": {
+    "selo": "FIM DA PARTE 1",
+    "pergunta": "Ela vai cortar?",
+    "chamada": "Segue para ver <span class=k>a parte 2</span><small>sai amanhã</small>"
+   }
+  }
+ ],
+ "capa": {
+  "selo": "PARTE 1",
+  "titulo": "ELE PEDIU<br><span style='color:#ff3341'>O CARTÃO</span>",
+  "faixa": "E ela já estava com a tesoura",
+  "quadro": 8.6
+ }
+}

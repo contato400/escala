@@ -7,7 +7,7 @@ description: Aciona quando for escrever roteiro de minissérie/novelinha vertica
 Leia junto: `escala-biblia-serie` (continuidade, personagens fixos, voto do público) e `escala-ganchos-retencao` (ganchos e formatos).
 
 ## Arco antes das partes
-Escreva `serie.md` com o arco inteiro (3 a 7 partes): personagens fixos (nome, aparência, roupa, voz), o conflito, a virada de cada parte e o gancho que fecha cada uma. A última parte resolve e entrega uma lição útil.
+Escreva `serie.md` com o arco inteiro (3 a 7 partes): personagens fixos (nome, aparência, roupa, voz), o conflito, a virada de cada parte e o gancho que fecha cada uma. A última parte resolve (lição ou dica só se o formato que está viralizando tiver isso).
 
 ## Cada parte (60 a 90 s; o TikTok só paga 1 minuto ou mais)
 1. **0 a 2 s: cena ou frase impossível de ignorar.** Começa no meio da ação, sem "oi", sem logo, sem contexto antes do impacto, sem silêncio. Primeiro quadro claro e chamativo.
@@ -20,7 +20,7 @@ Escreva `serie.md` com o arco inteiro (3 a 7 partes): personagens fixos (nome, a
 Frases curtas faladas rápido, corte a cada 2 a 3 s, legenda grande repetindo a fala, uma palavra-chave colorida por frase. Linguagem de conversa, para qualquer pessoa entender. Sons e trilha livres de direito que combinem com a emoção.
 
 ## Temas que mais prendem (base das novelinhas que viralizam)
-Injustiça e vingança, traição, segredo revelado, humilhado que dá a volta, golpe e como escapou, reviravolta absurda, mistério. Personagens claros (vilão que o público odeia, protagonista com quem se identifica).
+Injustiça e vingança, traição, segredo revelado, humilhado que dá a volta, reviravolta absurda, mistério, humor, absurdo, assunto do momento contado como história. Personagens claros (vilão que o público odeia, protagonista com quem se identifica).
 
 ## Legenda do post e título
 Legenda: 1 linha de curiosidade + "Parte X" + 3 a 5 hashtags do tema (sem spam). Título/descrição com a palavra que a pessoa buscaria. Pedido de ação sempre com o ganho: "Segue para ver a parte 2 amanhã".

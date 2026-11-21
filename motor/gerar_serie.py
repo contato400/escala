@@ -8,7 +8,7 @@ import json, os, sys, subprocess, wave, numpy as np
 from playwright.sync_api import sync_playwright
 
 MOTOR = os.path.dirname(os.path.abspath(__file__))
-SCR = '/tmp/claude-0/-home-claude/18ecb643-e46a-54b4-bb6c-bb4a8009ab64/scratchpad'
+SCR = os.environ.get('ESCALA_TMP', os.path.join(os.path.expanduser('~'), '.cache', 'escala-motor'))
 VOZ = os.path.join(SCR, 'voz', 'pt_BR-faber-medium.onnx')
 SR, FPS = 44100, 30
 
@@ -31,26 +31,28 @@ def ler(path):
 # ---------- narração ----------
 baixar_voz()
 FILTRO = {'tel': 'asetrate=22050*0.93,aresample=44100,highpass=f=350,lowpass=f=3200,volume=1.6',
+          'neto': 'asetrate=22050*1.08,aresample=44100,highpass=f=300,lowpass=f=3400,volume=1.5',
           'porta': 'asetrate=22050*0.9,aresample=44100,lowpass=f=1800,aecho=0.6:0.5:40:0.3,volume=1.8'}
 falas = []
 for i, seg in enumerate(S['trechos']):
     raw = f'{TMP}/s{i:02d}.wav'
     voz = seg.get('voz', 'narrador')
     # Voz Gemini (padrão desde 20/11) pelo serviço /voz; se falhar, cai na Piper e avisa.
-    g = subprocess.run([str(Path(__file__).resolve().parents[3] / 'rotinas' / 'voz.sh'), seg['fala'], raw + '.g.wav', seg.get('voz_gemini', 'Koda'), seg.get('estilo', '')], capture_output=True)
-    if g.returncode == 0:
+    VOZSH = os.environ.get('ESCALA_VOZSH', '')  # script opcional de voz Gemini; sem ele usa Piper
+    g = subprocess.run([VOZSH, seg['fala'], raw + '.g.wav', seg.get('voz_gemini', 'Koda'), seg.get('estilo', '')], capture_output=True) if VOZSH and os.path.exists(VOZSH) else None
+    if g is not None and g.returncode == 0:
         subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', raw + '.g.wav', '-ar', '22050', '-ac', '1', raw], check=True)
     else:
-        print('AVISO: voz Gemini falhou, usando Piper:', g.stderr.decode()[:200])
+        if g is not None: print('AVISO: voz Gemini falhou, usando Piper:', g.stderr.decode()[:200])
         subprocess.run(['python3', '-m', 'piper', '-m', VOZ, '-f', raw, '--length-scale', str(seg.get('ritmo', 1.0))],
                        input=seg['fala'].encode(), check=True, capture_output=True)
     if voz in FILTRO:
         f2 = f'{TMP}/s{i:02d}_{voz}.wav'
         subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', raw, '-af', FILTRO[voz], f2], check=True); raw = f2
     x = ler(raw); nz = np.where(np.abs(x) > 0.01)[0]
-    falas.append(x[max(0, nz[0] - 400): nz[-1] + 1200] if len(nz) else x)
+    falas.append(x[max(0, nz[0] - 1800): nz[-1] + 1200] if len(nz) else x)
 
-t = 0.6; pos = []
+t = S.get('inicio', 0.6); pos = []
 for i, seg in enumerate(S['trechos']):
     t += seg.get('antes', 0); pos.append(t)
     t += len(falas[i]) / SR + seg.get('pausa', 0.35)
@@ -58,7 +60,7 @@ TOTAL = t + 2.2
 dur = [len(f) / SR for f in falas]
 
 # ---------- linha do tempo ----------
-TL = {'total': TOTAL, 'badge': S.get('selo', ''), 'pixtela': S.get('pix_tela'), 'caps': [], 'calls': [], 'bubbles': [], 'shakes': [], 'beats': [], 'rule': [], 'knocks': []}
+TL = {'total': TOTAL, 'badge': S.get('selo', ''), 'etiqueta': S.get('etiqueta', 'HISTÓRIA BASEADA EM GOLPES REAIS'), 'pixtela': S.get('pix_tela'), 'caps': [], 'calls': [], 'bubbles': [], 'shakes': [], 'beats': [], 'rule': [], 'knocks': []}
 phone_on = door_on = pix_on = None; bub_open = []; tense = []; caps = []
 for i, seg in enumerate(S['trechos']):
     a, d = pos[i], dur[i]; fim = a + d
@@ -67,12 +69,17 @@ for i, seg in enumerate(S['trechos']):
     if seg.get('telefone') == 'on': phone_on = a - 0.3
     if seg.get('telefone') == 'off' and phone_on is not None: TL['phone'] = [phone_on, a]; phone_on = None
     if 'chamada' in seg:
-        c = seg['chamada']; TL['calls'].append({'t': a - 0.2, 'a': fim + 0.15, 'name': c['nome'], 'icon': c.get('icone', 'bank')})
+        c = seg['chamada']; TL['calls'].append({'t': a - 0.2, 'a': (a - 0.2) if c.get('atendida') else fim + 0.15, 'name': c['nome'], 'icon': c.get('icone', 'bank')})
+        for b in bub_open: b['end'] = a - 0.2
+        bub_open = []
+    if seg.get('limpar_bolhas'):
         for b in bub_open: b['end'] = a - 0.2
         bub_open = []
     if 'bolha' in seg:
-        b = {'t': a, 'txt': seg['bolha'], 'cps': len(seg['bolha']) / max(0.5, d), 'top': 250 + 190 * len(bub_open), 'lb': seg.get('rotulo', 'ELE DISSE:')}
+        b = {'t': a, 'mudo': bool(seg.get('sem_teclas')), 'txt': seg['bolha'], 'cps': len(seg['bolha']) / max(0.5, d), 'top': 250 + 190 * len(bub_open), 'lb': seg.get('rotulo', 'ELE DISSE:')}
         TL['bubbles'].append(b); bub_open.append(b)
+    if seg.get('fim_abertura'): TL['open'] = [0, a - 0.1]
+    if seg.get('silencio'): TL.setdefault('silences', []).append([max(0, a - 0.85), a - 0.05])
     if seg.get('encerrar'): TL['ended'] = [a, a + 1.8]
     if seg.get('pix') == 'on': pix_on = a - 0.2
     if seg.get('pix') == 'cancelar': TL['pixx'] = a
@@ -99,6 +106,11 @@ if pix_on is not None: TL['pix'] = [pix_on, end]
 if 'rules' in TL and TL['rules']['end'] > TOTAL and 'fin' in TL: TL['rules']['end'] = TL['fin']['t']
 if 'fin' in TL and TL['fin']['cta_t'] is None: TL['fin']['cta_t'] = TL['fin']['t'] + 1.3
 TL['caps'] = caps; TL['beats'] = tense
+if 'open' in TL:  # abertura: o gancho já está inteiro no quadro 0 (texto, telefone, conversa)
+    if caps: caps[0]['t'] = min(caps[0]['t'], -1.0)
+    if 'phone' in TL and TL['phone'][0] < 0.5: TL['phone'][0] = -1.0
+    if TL['calls'] and TL['calls'][0]['a'] <= 0.5: TL['calls'][0]['t'] = TL['calls'][0]['a'] = -1.0
+    if TL['bubbles'] and TL['bubbles'][0]['t'] < 1.0: TL['bubbles'][0]['t'] -= 0.6
 for c in TL['calls']: pass
 
 # ---------- som ----------
@@ -135,8 +147,11 @@ for c in TL['calls']:  # toque até atender
 for c in caps[1:]:
     if c['h']: add(whoosh(0.35), c['t'] - 0.1, 0.10)
 for b in TL['bubbles'] + ([TL['voice']] if 'voice' in TL else []):
+    if b.get('mudo'): continue
     for i, ch in enumerate(b['txt']):
-        if ch != ' ': add(key(), b['t'] + i / b['cps'] + rng.uniform(-0.008, 0.008), 0.09)
+        tk = b['t'] + i / b['cps']
+        if tk < b['t'] + 0.35: continue  # cliques só depois do começo da fala (senão comem a 1ª consoante)
+        if ch != ' ': add(key(), tk + rng.uniform(-0.008, 0.008), 0.09)
 if 'ended' in TL: add(tone(480, 0.25, 0.005, 0.05) + tone(620, 0.25, 0.005, 0.05), TL['ended'][0], 0.25); add(tone(480, 0.25, 0.005, 0.05) + tone(620, 0.25, 0.005, 0.05), TL['ended'][0] + 0.4, 0.25)
 if 'pix' in TL: add(whoosh(0.4), TL['pix'][0], 0.12)
 if 'pixx' in TL: add(impact(1.0), TL['pixx'], 0.6)
@@ -148,19 +163,22 @@ if 'rules' in TL:
 for w in tense:
     add(impact(), w[0], 0.6); x = w[0]
     while x < w[1]: add(thump(), x, 0.9); add(thump(50), x + 0.22, 0.6); x += 0.86
+if 'open' in TL: add(whoosh(0.5), TL['open'][1] - 0.15, 0.18)
 if 'fin' in TL:
     add(impact(1.4), TL['fin']['t'], 0.7); add(whoosh(0.4), TL['fin']['t'] + 0.2, 0.12)
     add(tone(660, 0.12, 0.002, 0.1) + tone(990, 0.12, 0.002, 0.1) * 0.5, TL['fin']['cta_t'], 0.35)
 tt = np.arange(N) / SR; pad = np.zeros(N)
-for f, v in [(55, 0.5), (110, 0.35), (130.81, 0.22), (164.81, 0.2), (220, 0.08)]:
+for f, v in ([] if S.get('grave_pad', True) is False else [(55, 0.5)]) + [(110, 0.35), (130.81, 0.22), (164.81, 0.2), (220, 0.08)]:
     pad += v * np.sin(2 * np.pi * f * tt + np.sin(2 * np.pi * 0.2 * tt) * 0.8)
 pad *= 0.6 + 0.4 * np.sin(2 * np.pi * 0.12 * tt)
 lvl = np.full(N, 0.11); lvl[:at(0.5)] = np.linspace(0, 0.11, at(0.5)); lvl[-at(1.2):] *= np.linspace(1, 0, at(1.2))
 for w in tense: lvl[at(w[0]):at(min(TOTAL, w[1]))] = 0.03
+SIL = TL.get('silences', [])
+for w in SIL: lvl[at(w[0]):at(w[1])] = 0.0
 mix += pad * lvl
 x = 0.8
 while x < TOTAL - 1.2:
-    if not any(w[0] <= x < w[1] for w in tense): add(thump(70, 0.12), x, 0.2)
+    if S.get('pulso', True) and not any(w[0] <= x < w[1] for w in tense + SIL): add(thump(70, 0.12), x, 0.2)
     x += 0.6
 voz = np.zeros(N)
 for i, f in enumerate(falas):
@@ -174,7 +192,9 @@ with wave.open(WAV, 'wb') as w:
 
 # ---------- imagem ----------
 def abrir(pw):
-    b = pw.chromium.launch(); pg = b.new_page(viewport={'width': 1080, 'height': 1920})
+    try: b = pw.chromium.launch()
+    except Exception: b = pw.chromium.launch(executable_path='/opt/pw-browsers/chromium')
+    pg = b.new_page(viewport={'width': 1080, 'height': 1920})
     pg.goto('file://' + os.path.join(MOTOR, 'serie.html')); pg.wait_for_timeout(600)
     pg.evaluate('tl => { TL = tl; init(); }', TL); return b, pg
 with sync_playwright() as pw:
@@ -204,5 +224,5 @@ with sync_playwright() as pw:
     b.close()
 OUT = os.path.join(OUTDIR, f'{NOME}.mp4')
 subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-framerate', str(FPS), '-i', f'{FR}/f%04d.jpg', '-i', WAV, '-c:v', 'libx264', '-preset', 'veryfast',
-                '-crf', '18', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '160k', '-shortest', '-movflags', '+faststart', OUT], check=True)
+                '-crf', '20', '-pix_fmt', 'yuv420p', '-af', 'loudnorm=I=-14:TP=-1.0:LRA=11', '-ar', '44100', '-c:a', 'aac', '-b:a', '160k', '-shortest', '-movflags', '+faststart', OUT], check=True)
 print('ok', OUT, round(TOTAL, 1), 's')

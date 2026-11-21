@@ -28,3 +28,15 @@ Responder os primeiros comentários em até 1 hora (pergunta que puxa conversa);
 
 ## Saúde da conta
 Toda semana ver "Saúde da conta"/status no TikTok Studio, avisos do Instagram e do YouTube. Qualquer aviso ou queda brusca: parar de postar aquele formato e avisar o Victor.
+
+## Lições dos livros (nosso, curtas)
+Origem: livros 07, 13, 16 e 12, notas em conteudo/estudos/livros/. Regras de rede e rótulo: `escala-conformidade-plataformas`.
+- **Estado de cada item da fila** em `aprovacao/fila.md`: Aprovado, Enviado ao Metricool (com id), Publicado (com link), Pendente. Só marcar Publicado com o retorno do Metricool ou o link real, depois de abrir o post. Sem resposta em 15 s fica Pendente e a rodada seguinte reenvia sem duplicar. Só a palavra "aprova" libera; qualquer outra resposta é correção.
+- **Teste a seco** antes da primeira publicação e depois de reconectar: rascunho ou envio para revisão (`createScheduledPostForReview`), conferir cota e links, sem publicar.
+- **Cota:** contar os 20 posts por mês do Metricool na fila; passou de 15, avisar o Victor.
+- **Arquivo:** subir a cada rede o arquivo exportado do editor, nunca baixado de outra rede (marca d'água reduz alcance). Mudar só o texto. Escolher a capa antes de subir: no Instagram ela não muda depois.
+- **Pacote por rede, nesta ordem:** título só no gancho, some na 1ª troca de cena; descrição com as palavras que a pessoa buscaria; até 5 hashtags do assunto; capa no quadro do gancho.
+- **Afiliado:** TikTok, ligar a divulgação de conteúdo ANTES de publicar (depois não muda); #publicidade na primeira linha.
+- **Comentários:** classificar em dúvida, elogio, crítica e assunto sensível. Responder dúvida e elogio com texto curto, citando algo que a pessoa disse, nenhuma resposta igual à outra. Crítica e assunto sensível só listar para o Victor. Não guardar nome nem dado de quem comentou.
+- **Medir:** 3 h só confere entrega; 24 h acelera ou freia; 72 h julga gancho e formato (`escala-medicao-e-teste`).
+
