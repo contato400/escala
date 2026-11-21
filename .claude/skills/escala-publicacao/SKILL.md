@@ -17,6 +17,9 @@ Publicar apenas o que estiver como APROVADO em `aprovacao/fila.md`. Troca de nom
 ## Regra do Victor (21/11): Instagram só em Reels de teste por enquanto
 Com poucos seguidores, todo vídeo no Instagram vai como **Reel de teste** (mostra só para quem não segue), com "Partilhar automaticamente com todos" ligado. Nada de postar o mesmo vídeo como Reel normal também (conteúdo repetido). No Metricool: tipo "Reel de teste". Aviso do Metricool: abaixo de 1.000 seguidores a Meta pode recusar o reel de teste pela API; conferir no horário e, se falhar, postar o reel de teste pelo app.
 
+## Atualização 21/11 10h30
+O Reel de teste ainda não está liberado para a conta (falhou pelo Metricool e pelo app). Até liberar: Instagram em **Reels normal postado pelo app**, com rótulo de IA e "Compartilhar no Facebook" na página; TikTok e YouTube pelo Metricool. Quando o Reel de teste aparecer no app, voltar à regra acima.
+
 ## Horários
 Testar 12h, 18h e 21h (horário de Brasília) e manter os que performarem. Registrar tudo na fila (horário real, link do post).
 

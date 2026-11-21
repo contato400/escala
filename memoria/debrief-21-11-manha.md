@@ -33,3 +33,12 @@
 3. Passo 3 do Telegram: ambiente na nuvem com rede liberada para api.telegram.org e chefe.quaseaconteceu.workers.dev, FABRICA_KEY nova como segredo de rede, tarefa agendada da fábrica (rodar à mão 2 vezes antes) mandando prévia com botões.
 4. Passo 4: publicador (Metricool já ligado; avaliar agendar pelo Metricool depois do "Aprova" no Telegram, lembrando o limite de 20 por mês).
 5. Motor de animação com boneco (teste de 10 s) e conteúdo de GTA 6.
+
+## 6. Atualização 10h30 (resultado do primeiro post e Instagram)
+- **YouTube**: Short publicado às 10h pelo Metricool, público. ✅
+- **TikTok**: publicado às 10h pelo Metricool (2 views na primeira conferência). ✅
+- **Instagram**: o Reel de teste pelo Metricool FALHOU ("Trial Reel Not Enough Followers"). Pelo app também não deixou: a Meta ainda não liberou Reel de teste para esta conta. O Victor postou a parte 1 como **Reels normal pelo app**. Regra até liberar: Instagram vai em **Reels normal, postado pelo app** (o Metricool só para TikTok e YouTube). Quando a opção de Reel de teste aparecer, voltar à regra de só Reel de teste.
+- **Facebook**: só recebe o Reels se o compartilhamento automático do app estiver ligado no post (pelo Metricool não vai). Conferir se a parte 1 apareceu na página.
+- **Instagram Plus e Facebook Plus**: o Victor ativou o mês grátis. Não dão selo, nem alcance, nem Reel de teste. Útil: fixar até 6 posts no Instagram (fixar a série em ordem) e mais estatística de Reels no Facebook. CANCELAR antes do fim do mês grátis (~20/12) para não cobrar. Selo verificado só no plano Meta One Essential (US$ 14,99/mês) com documento do dono: não fazer (ligaria a conta ao Victor).
+- **Pendente do Victor**: deixar de seguir o perfil do Wesley (kravmagacaveira) na conta do TikTok @quaseaconteceu.br.
+- **Metricool**: 20 publicações grátis por mês; a parte 1 usou TikTok e YouTube. Com Instagram pelo app, sobra mais cota.
