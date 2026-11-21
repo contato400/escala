@@ -59,7 +59,7 @@ async function telegram(req, env) {
   if (req.headers.get('X-Telegram-Bot-Api-Secret-Token') !== env.WEBHOOK_SECRET) return new Response('nao', { status: 401 });
   const u = await req.json();
   const de = u.message?.from?.id ?? u.callback_query?.from?.id;
-  if (String(de) !== String(env.DONO_ID)) return new Response('ok'); // estranho: ignora em silêncio
+  if (!env.DONO_ID || !de || String(de) !== String(env.DONO_ID)) return new Response('ok'); // estranho (ou sem dono configurado): ignora
 
   if (u.callback_query) {
     const q = u.callback_query;
@@ -88,8 +88,14 @@ async function telegram(req, env) {
     return new Response('ok');
   }
 
+  const foto = u.message?.photo?.at(-1) || (u.message?.document?.mime_type?.startsWith('image/') ? u.message.document : null);
+  if (foto) {
+    await novoPedido(env, 'print', (u.message.caption || '').slice(0, 500), foto.file_id);
+    await dizer(env, '📸 Print recebido. A fábrica lê os números na próxima rodada.');
+    return new Response('ok');
+  }
   const texto = (u.message?.text || '').trim();
-  if (!texto) { await dizer(env, 'Por enquanto só leio texto.'); return new Response('ok'); }
+  if (!texto) { await dizer(env, 'Por enquanto leio texto e print (foto).'); return new Response('ok'); }
   const [cmd, ...resto] = texto.split(/\s+/);
   const arg = resto.join(' ');
   switch (cmd.split('@')[0].toLowerCase()) {
@@ -143,7 +149,7 @@ async function conversar(env, texto, ajusteDe) {
   if (env.AI) {
     try {
       const itens = (await listar(env, 'item:')).slice(-5).map((i) => `${i.titulo} (${i.status})`).join('; ') || 'nenhum';
-      const ctx = `Contexto agora. Prévias: ${itens}. Temas: ${(await env.FILA.get('estado:temas')) || 'ainda não'}. Números: ${(await env.FILA.get('estado:status')) || 'ainda não'}.`;
+      const ctx = `Hoje é ${new Date().toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' })}. Contexto agora. Prévias: ${itens}. Temas: ${(await env.FILA.get('estado:temas')) || 'ainda não'}. Números: ${(await env.FILA.get('estado:status')) || 'ainda não'}.`;
       const out = await env.AI.run(MODELO, {
         messages: [{ role: 'system', content: PERSONA + '\n\n' + ctx }, ...hist.slice(-8), { role: 'user', content: texto }],
         max_tokens: 350, temperature: 0.4,
@@ -197,6 +203,15 @@ async function fabrica(req, env, caminho) {
     return json({ pedidos: await listar(env, 'pedido:'), itens: await listar(env, 'item:'), conversa: (await env.FILA.get('estado:conversa', 'json')) || [] });
   }
 
+  if (caminho.startsWith('/fabrica/arquivo/') && req.method === 'GET') {
+    const fileId = decodeURIComponent(caminho.slice('/fabrica/arquivo/'.length));
+    const info = await tg(env, 'getFile', { file_id: fileId });
+    if (!info.ok) return json({ erro: 'arquivo' }, 404);
+    const base = env.TG_API || 'https://api.telegram.org';
+    const r = await fetch(`${base}/file/bot${env.TELEGRAM_TOKEN}/${info.result.file_path}`);
+    return new Response(r.body, { status: r.status, headers: { 'content-type': r.headers.get('content-type') || 'application/octet-stream' } });
+  }
+
   if (caminho === '/fabrica/lido' && req.method === 'POST') {
     // {pedidos: [chaves], itens: [ids]} -> apaga do KV o que a fábrica já processou
     const { pedidos = [], itens = [] } = await req.json();
@@ -240,7 +255,10 @@ export default {
   async fetch(req, env) {
     const caminho = new URL(req.url).pathname;
     try {
-      if (caminho === '/telegram' && req.method === 'POST') return await telegram(req, env);
+      if (caminho === '/telegram' && req.method === 'POST') {
+        try { return await telegram(req, env); }
+        catch (e) { return new Response('ok'); } // nunca 500 para o Telegram: ele reenviaria a mesma mensagem
+      }
       if (caminho.startsWith('/fabrica/')) return await fabrica(req, env, caminho);
       if (caminho === '/configurar') return await configurar(req, env);
       return new Response('Central Quase Aconteceu: ok');

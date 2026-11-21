@@ -67,4 +67,21 @@ ok(ultimo().corpo.text.includes('Anotado'), 'IA fora do ar: bot ainda responde e
 r = await (await fab('/fabrica/pedidos')).json(); ok(r.conversa.length >= 6 && r.pedidos.length === 4, 'fábrica lê a conversa e os 4 pedidos');
 await tgMsg(999, 'oi'); ok(chamadasIA.length === 4, 'estranho não gasta IA');
 
+// --- correções da leitura dos livros 18 e 19 ---
+kv.clear();
+await worker.fetch(new Request(B + '/telegram', { method: 'POST', headers: { 'X-Telegram-Bot-Api-Secret-Token': 'W' }, body: JSON.stringify({ message: { from: { id: 111 }, chat: { id: 111 }, caption: 'views de hoje', photo: [{ file_id: 'pequena' }, { file_id: 'GRANDE' }] } }) }), env);
+ok([...kv.values()].some((v) => v.includes('"print"') && v.includes('GRANDE') && v.includes('views de hoje')), 'print vira pedido com o maior tamanho e a legenda');
+ok(ultimo().corpo.text.includes('Print recebido'), 'bot confirma o print');
+const semDono = { ...env, DONO_ID: undefined }; enviados.length = 0;
+await worker.fetch(new Request(B + '/telegram', { method: 'POST', headers: { 'X-Telegram-Bot-Api-Secret-Token': 'W' }, body: JSON.stringify({ message: { chat: { id: 5 }, text: '/fila' } }) }), semDono);
+ok(enviados.length === 0, 'sem DONO_ID configurado ninguém é atendido');
+const quebrado = { ...env, FILA: { ...env.FILA, put: async () => { throw new Error('kv fora'); } } };
+r = await worker.fetch(new Request(B + '/telegram', { method: 'POST', headers: { 'X-Telegram-Bot-Api-Secret-Token': 'W' }, body: JSON.stringify({ message: { from: { id: 111 }, chat: { id: 111 }, text: 'oi' } }) }), quebrado);
+ok(r.status === 200, 'erro interno responde 200 ao Telegram (sem reenvio)');
+const fetchAntes = globalThis.fetch;
+globalThis.fetch = async (url, op) => url.includes('/getFile') ? new Response(JSON.stringify({ ok: true, result: { file_path: 'photos/a.jpg' } })) : url.includes('/file/botT/photos/a.jpg') ? new Response('IMG', { headers: { 'content-type': 'image/jpeg' } }) : fetchAntes(url, op);
+r = await fab('/fabrica/arquivo/GRANDE'); ok(r.status === 200 && (await r.text()) === 'IMG', 'fábrica baixa o print pelo Worker');
+globalThis.fetch = fetchAntes;
+ok((await fab('/fabrica/arquivo/GRANDE', {}, 'errada')).status === 401, 'baixar print sem chave é recusado');
+
 console.log(falhas ? `\n${falhas} falha(s)` : '\nTudo certo'); process.exit(falhas ? 1 : 0);

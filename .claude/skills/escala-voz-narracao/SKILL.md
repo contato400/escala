@@ -23,5 +23,5 @@ description: Aciona quando for gerar narração, voz de personagem, diálogo ou 
 
 ## Lições (21/11, parte 1 v2)
 - Piper lê "chip" como "xip": escrever **"chipe"** na fala (a legenda continua "chip"). Antes de renderizar palavra estrangeira, conferir o fonema: `PiperVoice.load(...).phonemize("palavra")`.
-- Cliques de digitação da bolha em cima da primeira fala comem a consoante do começo ("Corta" virou "Porta"). Na fala do gancho, usar `"sem_teclas": true` no trecho.
+- Cliques de digitação da bolha em cima da primeira fala comem a consoante do começo ("Corta" virou "Porta"). Na fala do gancho, usar `"sem_teclas": true` no trecho. (21/11: o motor agora começa os cliques 0,35 s depois da fala em toda bolha; a transcrição do GTA 6 mostrou o mesmo erro no anúncio: "GTA" virou "Tá".)
 - Whisper aqui: `HF_HUB_DISABLE_XET=1` para baixar o modelo e decodificar o áudio com ffmpeg para um array (o `av` instalado não abre arquivo). Nome próprio (Neide) o Whisper erra mesmo com fonema certo: conferir o fonema antes de mexer.

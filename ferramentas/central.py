@@ -6,6 +6,7 @@ Uso:
   python3 ferramentas/central.py pedidos            # imprime JSON com pedidos e itens
   python3 ferramentas/central.py lido <chave_pedido>... [--itens id1,id2]
   python3 ferramentas/central.py estado [--temas arq.txt] [--status arq.txt] [--aviso "texto"]
+  python3 ferramentas/central.py arquivo <file_id> <saida.jpg>   # baixa um print que o Victor mandou (pedido tipo "print", campo ref)
 
 Endereço: variável ESCALA_CENTRAL (ex.: https://chefe.quaseaconteceu.workers.dev).
 Chave: a rede da nuvem injeta o cabeçalho X-Fabrica-Key (segredo de rede do ambiente "escala").
@@ -52,6 +53,10 @@ def main(a):
             if x.startswith('--itens'):
                 itens = x.split('=', 1)[1].split(',') if '=' in x else []
         print(post_json('/fabrica/lido', {'pedidos': chaves, 'itens': itens}))
+    elif cmd == 'arquivo' and len(a) == 3:
+        import urllib.parse
+        curl(['-o', a[2], BASE + '/fabrica/arquivo/' + urllib.parse.quote(a[1], safe='')])
+        print('salvo', a[2])
     elif cmd == 'estado':
         dados, i = {}, 1
         while i < len(a):

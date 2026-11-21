@@ -149,7 +149,9 @@ for c in caps[1:]:
 for b in TL['bubbles'] + ([TL['voice']] if 'voice' in TL else []):
     if b.get('mudo'): continue
     for i, ch in enumerate(b['txt']):
-        if ch != ' ': add(key(), b['t'] + i / b['cps'] + rng.uniform(-0.008, 0.008), 0.09)
+        tk = b['t'] + i / b['cps']
+        if tk < b['t'] + 0.35: continue  # cliques só depois do começo da fala (senão comem a 1ª consoante)
+        if ch != ' ': add(key(), tk + rng.uniform(-0.008, 0.008), 0.09)
 if 'ended' in TL: add(tone(480, 0.25, 0.005, 0.05) + tone(620, 0.25, 0.005, 0.05), TL['ended'][0], 0.25); add(tone(480, 0.25, 0.005, 0.05) + tone(620, 0.25, 0.005, 0.05), TL['ended'][0] + 0.4, 0.25)
 if 'pix' in TL: add(whoosh(0.4), TL['pix'][0], 0.12)
 if 'pixx' in TL: add(impact(1.0), TL['pixx'], 0.6)
