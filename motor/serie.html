@@ -67,6 +67,10 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#07080a;font-fam
 #fin .cta small{display:block;font:700 34px/1.25 I;color:#333;margin-top:14px}
 #arrow{margin:40px auto 0;width:90px;height:90px;display:block}
 #brand{position:absolute;top:1560px;width:100%;text-align:center;font:700 26px I;letter-spacing:3px;color:rgba(255,255,255,.55);opacity:0}
+body.open #bg{background:radial-gradient(ellipse at 50% 45%,#ffe066 0%,#ffd23f 55%,#e8b600 100%)}
+body.open #vig{opacity:.2}body.open #grain{opacity:.03}body.open #redflash{opacity:0!important}
+body.open #cap{color:#0a0a0a}body.open #cap .hl,body.open #cap .ye{color:#c1121f}
+body.open #tag{color:#0a0a0a;border-color:rgba(0,0,0,.45)}
 </style></head><body><div id="stage">
 <div id="bg"></div><canvas id="grain" width="540" height="960"></canvas><div id="redflash"></div>
 <div id="tag">HISTÓRIA BASEADA EM GOLPES REAIS</div><div id="badge"></div>
@@ -115,6 +119,7 @@ function init(){ // monta bolhas e regras uma vez
 }
 function render(t){
  const T=TL;grain(Math.floor(t*24));
+ document.body.classList.toggle('open',vis(t,T.open));
  // legendas
  let ci=-1;T.caps.forEach((c,i)=>{if(t>=c.t&&(!c.end||t<c.end))ci=i});
  if(ci!==lastCap){if(ci>=0)setCap(T.caps[ci].h);else $('#cap').innerHTML='';lastCap=ci}

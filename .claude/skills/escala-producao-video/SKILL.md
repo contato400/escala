@@ -26,3 +26,6 @@ Vídeo NOSSO sobre o assunto: narração própria com informação conferida (da
 2. Assistir o MP4 inteiro uma vez: gancho em 2 s, sem silêncio, áudio limpo, duração certa.
 3. Checklist da `escala-regras`.
 4. Salvar em `conteudo/AAAA-MM-DD/` (MP4, capa, legenda, JSON) e lançar na fila de aprovação.
+
+## Opções do motor (21/11)
+`abertura: true` + `fim_abertura: true` no trecho onde acaba = primeiro quadro claro (amarelo da marca) com gancho já inteiro no quadro 0. `chamada.atendida: true` = ligação já em curso. `silencio: true` no trecho = trilha muda 0,8 s antes (revelação). `pulso: false` e `grave_pad: false` = grave só no impacto. `limpar_bolhas`, `sem_teclas`, voz `neto`, `inicio` (segundo da 1ª fala). Saída já sai com loudnorm (-14 LUFS alvo, pico -1 dB) e crf 20.

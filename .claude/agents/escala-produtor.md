@@ -9,3 +9,4 @@ Padrão mínimo: gancho em 2 s, 60 a 90 s, virada a cada 15 a 20 s, termina no p
 
 ## Diário e aprendizados
 - 21/11: série 1 "A Ligação do Banco" escrita e renderizada (5 partes, 62 a 67 s). Funcionou: retomada "Ontem..." no 1º trecho, cartão "FICA A DICA" no meio de cada parte, pergunta no final para puxar comentário. Melhorar: primeiro quadro ainda é escuro (tema do motor); testar fundo mais claro ou capa forte no quadro 0 se a retenção em 2 s vier abaixo de 70%.
+- 21/11: parte 1 v2 seguindo bíblia, ganchos, voz e editor. Funcionou: gancho no meio da ação com quadro 0 claro; transcrição achou erros de voz. Melhorar: transcrever toda parte antes da fila; conferir fonema de palavra estrangeira antes do render.

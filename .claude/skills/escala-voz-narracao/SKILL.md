@@ -20,3 +20,8 @@ description: Aciona quando for gerar narração, voz de personagem, diálogo ou 
 - Transcrever cada áudio com faster-whisper (modelo small, `language="pt"`) e comparar com o roteiro: frase a mais no começo, palavra trocada, nome errado.
 - loudnorm na mixagem; voz sempre acima da trilha; pico perto de -1 dB.
 - A duração da voz define a duração da cena (o motor recalcula).
+
+## Lições (21/11, parte 1 v2)
+- Piper lê "chip" como "xip": escrever **"chipe"** na fala (a legenda continua "chip"). Antes de renderizar palavra estrangeira, conferir o fonema: `PiperVoice.load(...).phonemize("palavra")`.
+- Cliques de digitação da bolha em cima da primeira fala comem a consoante do começo ("Corta" virou "Porta"). Na fala do gancho, usar `"sem_teclas": true` no trecho.
+- Whisper aqui: `HF_HUB_DISABLE_XET=1` para baixar o modelo e decodificar o áudio com ffmpeg para um array (o `av` instalado não abre arquivo). Nome próprio (Neide) o Whisper erra mesmo com fonema certo: conferir o fonema antes de mexer.

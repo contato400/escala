@@ -18,3 +18,9 @@
 - **Feito:** guia `telegram/passo-1.md`; andamento anotado no plano.
 - **Pendente:** Victor fazer as partes A e B e mandar subdomínio workers.dev + @ do bot; aí começa o passo 2 (código do Worker). Também pausado a pedido: recriar a parte 1 da série 1 com as skills novas (pedido interrompido, retomar quando o Victor quiser).
 - **Verificado:** nada a testar ainda (depende de ação do Victor). Os nomes dos menus do Cloudflare podem variar com a versão do painel; o guia cita os dois nomes.
+
+## 21/11/2026 · parte 1 v2 (skills novas)
+- **Pedido:** refazer a parte 1 seguindo as skills novas, para comparar.
+- **Feito:** bíblia `conteudo/series/a-ligacao/biblia.md`; v2 em `conteudo/2026-11-21/s01p1-v2/` (entregas: MP4 69 s + capa; projeto: JSON e folha; `comparacao.md`). Motor ganhou abertura clara, chamada atendida, silêncio antes de revelação, grave só no impacto, sem_teclas, loudnorm. Lições nas skills de voz e produção.
+- **Decisões pendentes:** postar v1 ou v2 como parte 1; se v2, refazer as partes 2 a 5 no mesmo estilo e corrigir o furo da parte 4.
+- **Verificado:** folha a cada 3 s olhada; transcrição do MP4 confere com o roteiro (Whisper ainda escreve "Nade" para Neide e "Cordo" no 1º segundo; fonema da voz está certo e o áudio cru transcreve "Corta"); -15,4 LUFS, pico -0,3 dB; 1080x1920 30 fps.
