@@ -76,3 +76,9 @@
 - OpusClip confirmado pelo Victor (conta com créditos grátis): entra como nota extra de viralidade e cortes antes da fila (`escala-editor-video` seção 11).
 - Bot: suporte ao Gemini (segredo GEMINI_KEY, modelo em GEMINI_MODEL, padrão gemini-2.5-flash) com reserva no Workers AI; 47 testes. Guia `telegram/passo-4-gemini.md`. Aviso dado: assinatura Gemini Pro não cobre API; usar plano grátis do AI Studio.
 - Radar semanal rodando (agente); resumo vai para o Telegram com 3 ideias; Victor responde 1, 2 ou 3 lá.
+
+## 21/11/2026 · radar da semana (rodada manual 2)
+- Radar dos últimos 7 dias em `conteudo/2026-11-21/radar-semana.md` (fontes; 3 ideias com pedido do Flow cena por cena e ficha de personagem). Resumo enviado ao Telegram (aviso + /temas).
+- Prova: média em TikTok/Instagram (estudos da Virlo), fraca no YouTube: TranscriptAPI ficou SEM CRÉDITO e youtube.com bloqueado na nuvem.
+- Ideias: 1 O Figurante (GTA 6 sem nada do jogo), 2 Seu Bigode gato porteiro (Black Friday 27/11), 3 A Panela que Segurou a Pressão. Victor responde 1, 2 ou 3 no Telegram.
+- Pendente: Victor escolher; decidir como fechar o YouTube (US$ 5 na TranscriptAPI, liberar youtube.com, ou print).
