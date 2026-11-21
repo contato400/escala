@@ -31,5 +31,19 @@ Se o Victor aprovar, só assim:
 - Sem modelo que pareça pessoa real ou famosa; sem menor de idade; sem sexualizar.
 - Voz feminina "recomendando" perfume para homem (como ele faz) também é depoimento falso: não fazer.
 
+### Porta-voz fictício do livro 13 · DECISÃO DO VICTOR (não aprovado)
+Origem: livro 13, cap. 9 e Apêndice C (notas em `conteudo/estudos/livros/13-publicidade-em-video.md`). O livro propõe uma porta-voz fictícia que **informa e convida, nunca dá depoimento**. Isso difere da proibição acima, que barra a modelo "recomendando". O Victor decide entre: (a) manter a proibição atual; (b) autorizar só este desenho. Até a resposta, vale (a).
+Se autorizar (b), exigir tudo isto:
+- Conta separada da Quase Aconteceu, etiqueta de IA da rede e tarja na tela "Personagem criado com IA".
+- Pode dizer: o produto, a embalagem, onde comprar, convite neutro ("procure na loja") e informação que vem do anúncio. **Nunca** diz que usou, comprou, gostou ou recomenda por experiência, nem promete resultado. "Porta-voz não é cliente."
+- Rosto inventado do zero, sem lembrar pessoa conhecida, sem menor de idade, sem sexualizar.
+- Ficha fixa (aparência, figurino sem texto, voz com identificador guardado) e frase de teste da voz antes de cada episódio.
+- Aviso de publicidade nos moldes de `escala-conformidade-plataformas` (seção 6).
+
+### Aviso e fotos do produto (do livro 13 e 11)
+- Aviso: "#publicidade" na primeira linha da descrição, frase falada de até 15 palavras quando o produto aparece e "#publicidade" fixo na tela. Sem "melhor", "garantido" nem urgência falsa. Descartar produto cuja página prometa renda ou cura.
+- Foto do produto: só material que o programa de afiliados ou o produtor libere para divulgação, ou foto nossa. Alterar ou animar foto de terceiro com IA exige licença que cubra alteração e IA.
+
 ## 4. Regra de produção que veio junto
 Antes de gerar qualquer coisa com IA (sistema, imagem, vídeo, roteiro), **pedir para a própria IA melhorar o pedido com detalhes** e conferir esse pedido melhorado antes de mandar produzir.
+| Porta-voz fictício que informa e convida, nunca dá depoimento (livro 13) | DECISÃO DO VICTOR | skill escala-hype-e-afiliado seção 3 |
