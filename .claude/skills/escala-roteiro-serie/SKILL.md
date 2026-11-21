@@ -4,6 +4,8 @@ description: Aciona quando for escrever roteiro de minissérie/novelinha vertica
 ---
 # Roteiro de série que prende
 
+Leia junto: `escala-biblia-serie` (continuidade, personagens fixos, voto do público) e `escala-ganchos-retencao` (ganchos e formatos).
+
 ## Arco antes das partes
 Escreva `serie.md` com o arco inteiro (3 a 7 partes): personagens fixos (nome, aparência, roupa, voz), o conflito, a virada de cada parte e o gancho que fecha cada uma. A última parte resolve e entrega uma lição útil.
 
