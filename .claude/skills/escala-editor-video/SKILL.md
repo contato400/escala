@@ -72,3 +72,6 @@ Só trilha sintetizada por nós (o motor gera), biblioteca livre com licença co
 
 ## 10. Rotina para gastar menos
 Um vídeo por vez. Amostra aprovada antes do vídeo inteiro quando o estilo for novo: **8 s** para estilo simples, **10 a 15 s** quando tem movimento (câmera andando, moldura, cartões, 3D), porque 8 s não mostram a transição. A amostra tem fala, legenda, enquadramento e pelo menos uma inserção; abertura sozinha não valida o estilo. Em lote, aprove a 1ª peça antes das outras (máximo 3). Corrigir por trecho ("de 0:42 a 0:48 troque a legenda"), nunca refazer tudo. Aprovado? perguntar se vale para os próximos do mesmo estilo; se sim, registrar aqui.
+
+## 11. OpusClip (nota de viralidade e cortes) · decidido pelo Victor em 21/11
+O Victor tem conta no OpusClip (créditos grátis). Depois do MP4 conferido e antes da fila: o Victor (ou o Cowork) sobe o vídeo, o OpusClip devolve cortes e uma nota de viralidade para cada um. Usar a nota como **mais um sinal**, nunca como verdade: o que decide é a medição real (`escala-medicao-e-teste`). Funciona melhor em vídeo de mais de 1 min; em Short serve para comparar 2 ou 3 versões do mesmo vídeo (gancho diferente). Registrar a nota ao lado da versão na fila, para comparar depois com as views de verdade.

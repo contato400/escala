@@ -71,3 +71,8 @@
 - Chave trocada pelo Victor; formulário salvo; `central.py pedidos` respondeu (pedidos e conversa visíveis; IA do bot conversando).
 - Rodada manual 1: aviso respondendo a pergunta de 13h11 (Insta/Facebook), prévia "TESTE" com vídeo e botões enviada (id teste-central), 4 pedidos de teste lidos, `--rodada` registrado, linha em `memoria/registro-rodadas.csv`.
 - Pendente: Victor apertar um botão na prévia de teste; rodada manual 2 com vídeo real; criar a tarefa agendada.
+
+## 21/11/2026 · OpusClip e Gemini no bot
+- OpusClip confirmado pelo Victor (conta com créditos grátis): entra como nota extra de viralidade e cortes antes da fila (`escala-editor-video` seção 11).
+- Bot: suporte ao Gemini (segredo GEMINI_KEY, modelo em GEMINI_MODEL, padrão gemini-2.5-flash) com reserva no Workers AI; 47 testes. Guia `telegram/passo-4-gemini.md`. Aviso dado: assinatura Gemini Pro não cobre API; usar plano grátis do AI Studio.
+- Radar semanal rodando (agente); resumo vai para o Telegram com 3 ideias; Victor responde 1, 2 ou 3 lá.

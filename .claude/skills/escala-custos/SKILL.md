@@ -71,3 +71,7 @@ Só com receita real e "DECISÃO DO VICTOR". Antes de pedir gasto ao Victor, ent
 3. Conta: custo novo por mês, receita do mês (fato) ou estimativa (suposição), ponto de equilíbrio e cenário fraco com METADE da receita estimada.
 4. "Se..., então...": o dado que mudaria a conclusão. Sem "você deve", sem porcentagem de chance.
 Gatilho sugerido (nosso): receita do mês cobrindo 2 vezes o custo novo, mês fechado. Hub de várias IAs: não assinar, ir direto à fonte (opinião do guia g02).
+
+## Gemini e OpusClip (21/11)
+- A assinatura Gemini Pro (app, Flow, Nano Banana) **não** inclui a API. A API do Google AI Studio tem plano grátis com limite diário: é o que o bot usa (segredo `GEMINI_KEY` no Cloudflare). No plano grátis o Google pode usar o conteúdo para melhorar produtos: nunca mandar senha ou dado pessoal ao bot. Plano pago da API só com lucro.
+- OpusClip: créditos grátis da conta do Victor. Não comprar créditos sem DECISÃO DO VICTOR.

@@ -104,4 +104,19 @@ kv.set('estado:ultima_rodada', JSON.stringify({ quando: new Date(Date.now() - 9 
 await worker.scheduled({}, env, { waitUntil: (p) => p }); await new Promise((r) => setTimeout(r, 10));
 ok(enviados.some((e) => String(e.corpo.text).includes('não dá sinal')), 'conferência avisa quando a fábrica some');
 
+// --- Gemini como IA principal, Workers AI de reserva ---
+kv.clear();
+const envG = { ...env, GEMINI_KEY: 'G' }; let chamouGemini = 0; const f0 = globalThis.fetch;
+globalThis.fetch = async (url, op) => {
+  if (url.includes('generativelanguage')) { chamouGemini++; const b = JSON.parse(op.body);
+    if (b.contents.at(-1).parts[0].text.includes('falha')) return new Response('{}', { status: 500 });
+    return new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: 'Resposta do Gemini.\nACAO: produzir :: vídeo 3D' }] } }] })); }
+  return f0(url, op); };
+await worker.fetch(new Request(B + '/telegram', { method: 'POST', headers: { 'X-Telegram-Bot-Api-Secret-Token': 'W' }, body: JSON.stringify({ message: { from: { id: 111 }, chat: { id: 111 }, text: 'faz um vídeo 3D' } }) }), envG);
+ok(chamouGemini === 1 && ultimo().corpo.text === 'Resposta do Gemini.', 'com GEMINI_KEY responde pelo Gemini');
+ok([...kv.values()].some((v) => v.includes('"produzir"') && v.includes('vídeo 3D')), 'Gemini classifica o pedido');
+await worker.fetch(new Request(B + '/telegram', { method: 'POST', headers: { 'X-Telegram-Bot-Api-Secret-Token': 'W' }, body: JSON.stringify({ message: { from: { id: 111 }, chat: { id: 111 }, text: 'isso dá falha' } }) }), envG);
+ok(ultimo().corpo.text.startsWith('Tudo certo por aqui'), 'Gemini fora do ar: cai para a IA do Cloudflare');
+globalThis.fetch = f0;
+
 console.log(falhas ? `\n${falhas} falha(s)` : '\nTudo certo'); process.exit(falhas ? 1 : 0);
