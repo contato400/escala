@@ -82,3 +82,9 @@
 - Prova: média em TikTok/Instagram (estudos da Virlo), fraca no YouTube: TranscriptAPI ficou SEM CRÉDITO e youtube.com bloqueado na nuvem.
 - Ideias: 1 O Figurante (GTA 6 sem nada do jogo), 2 Seu Bigode gato porteiro (Black Friday 27/11), 3 A Panela que Segurou a Pressão. Victor responde 1, 2 ou 3 no Telegram.
 - Pendente: Victor escolher; decidir como fechar o YouTube (US$ 5 na TranscriptAPI, liberar youtube.com, ou print).
+
+## 21/11/2026 · Gemini no bot feito
+- Passo 4 feito pelo Victor (GEMINI_KEY no Cloudflare); conversa do bot respondendo bem.
+- Botão Aprova da prévia de teste funcionou (gerou pedido "publicar" do teste); marcado como lido, nada publicado.
+- Chave do Gemini para a fábrica (vozes): o formulário não aceita o cabeçalho x-goog-api-key; o Victor cadastra em Segredos de rede do ambiente "escala" (host generativelanguage.googleapis.com, cabeçalho x-goog-api-key). Liberar o host junto.
+- TranscriptAPI sem crédito: Victor vai criar conta grátis com o e-mail Victor Augusto e reconectar o conector no claude.ai.
