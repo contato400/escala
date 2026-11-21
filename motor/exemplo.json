@@ -1,0 +1,13 @@
+{"nome":"teste","selo":"PARTE 9","trechos":[
+ {"fala":"Ela desligou.","legenda":"Ela *desligou.","telefone":"on","encerrar":true},
+ {"fala":"Mas o telefone tocou de novo.","legenda":"Mas o telefone tocou de ^novo.","chamada":{"nome":"Delegacia de Polícia","icone":"police"}},
+ {"fala":"Aqui é o delegado.","voz":"tel","bolha":"Aqui é o delegado."},
+ {"fala":"Faça um Pix.","voz":"tel","bolha":"Faça um Pix.","pix":"on","dedo":true,"tensao":true},
+ {"fala":"Ela cancelou.","legenda":"Ela +cancelou.","pix":"cancelar","regra":"Polícia NUNCA pede Pix."},
+ {"fala":"Alguém bateu na porta.","legenda":"Alguém bateu na porta.","telefone":"off","pix":"off","porta":"on","batida":true},
+ {"fala":"Vim buscar seu cartão.","voz":"porta","voz_porta":"Vim buscar seu cartão."},
+ {"fala":"Grave as regras.","legenda":"Grave as regras:","porta":"off","lista":"on","limpar_legenda":false},
+ {"fala":"Desligue.","item":"Desligue."},
+ {"fala":"Como terminou?","final":{"selo":"FIM DA PARTE 9","pergunta":"Como terminou?","chamada":"Segue para ver <span class=k>a parte 10</span><small>sai amanhã</small>"}},
+ {"fala":"Segue pra ver a parte dez amanhã.","mostrar_chamada":true}],
+ "capa":{"selo":"PARTE 9","titulo":"TESTE<br><span style='color:#ff3341'>DO MOTOR</span>","faixa":"Faixa amarela","quadro":2.5}}
