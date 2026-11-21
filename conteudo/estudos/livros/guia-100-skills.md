@@ -193,4 +193,4 @@ Tabela completa das 100 skills. SIM = escrever versão nossa (nunca instalar o p
 | 98 | Gmail Connector | NÃO | Não conectar e-mail do Victor a skill de terceiro |
 | 99 | Lark/Feishu | NÃO | Ferramenta corporativa chinesa |
 | 100 | Azure Communication Services Voice | NÃO | Telefonia |
-Contagem: SIM (ideia ou método) = 10 (33, 34, 39, 57, 67, 68, 77, 88, 96 e a prática de subagente no 75 como TALVEZ); TALVEZ = 20; JÁ TEMOS = 2 mais 6 cobertos por ui-ux-pro-max; NÃO = o resto (inclui 2 PROIBIDAS: 23 e 25).
+Contagem: SIM (escrever versão nossa) = 9 (33, 34, 39, 57, 67, 68, 77, 88, 96); TALVEZ = 17 (21, 29, 32, 35, 41, 45, 48, 50, 70, 75, 81, 82, 83, 84, 86, 93, 94); JÁ TEMOS = 2 (01, 28), mais 6 cobertos por `ui-ux-pro-max` (02 a 10 só em parte); NÃO = o resto, inclusive 2 PROIBIDAS (23 e 25).
