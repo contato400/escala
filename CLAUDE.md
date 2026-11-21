@@ -49,6 +49,7 @@ Curto e direto. Tabela Tarefa | Status | Evidência | Próxima ação. No fim, a
 | Edição, conferência, capa, copiar estilo de referência | escala-editor-video (+ ferramentas/estudar_referencia.py) |
 | Animação com boneco feita em código | escala-animacao-personagens |
 | Imagem e vídeo gerados por IA, personagem consistente | escala-video-ia |
+| Assunto do momento (GTA 6), afiliado, modelo de IA | escala-hype-e-afiliado |
 | Publicar e responder comentários | escala-publicacao |
 | Crescer, aquecer conta, diagnóstico | escala-crescimento-plataformas |
 | Produto próprio na Greenn | escala-produto-greenn, escala-oferta, ebook-profissional |
