@@ -97,7 +97,7 @@ Escolha o movimento pela pergunta do plano, depois pelo efeito.
 | Gancho, virada, final | vídeo pago, só com OK do Victor e custo lido antes (no Higgsfield, `estimate_video_cost`) |
 - Corte seco é grátis, não deforma e todo mundo entende. Monte primeiro só com cortes e gere clipe só onde a história pede continuidade.
 - FLUX schnell gera só por texto (nosso, confirmar antes de prometer): consistência vem de ficha igual, bloco de estilo igual e seed fixa se houver. Personagem idêntico em muitos planos = boneco em código ou gerador com imagem de referência.
-- DECISÃO DO VICTOR: qual gerador com imagem de referência (Gemini/Nano Banana, ChatGPT) fixa as âncoras; e quando liberar Flow, Veo ou Kling para os planos pagos.
+- Decidido (Victor, 21/11): o Victor já assina **Gemini Pro (Nano Banana + Flow/Veo)** e **ChatGPT Plus**. Âncora de personagem: Nano Banana (principal) ou ChatGPT imagem (segunda opção). Clipe com movimento: Flow, dentro da cota da assinatura. Planos de assinatura pagos dão uso comercial; conferir os termos do dia (escala-conformidade-plataformas). Esses geradores rodam na conta do Victor: a fábrica prepara o pedido pronto (escala-pedir-a-ia) e o Victor gera, até existir acesso automático.
 - Rascunho (1 saída, resolução baixa, mesmo modelo do final) > piloto > final. Nunca "gerar de novo com o mesmo pedido" para corrigir: se o erro volta igual, está na imagem ou no texto; se muda, é sorteio.
 
 ## Checklist antes de entregar ao Victor

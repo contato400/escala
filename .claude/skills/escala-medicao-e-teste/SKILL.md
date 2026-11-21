@@ -65,7 +65,7 @@ Uma linha por elemento testado (tipo de gancho, formato, duração, horário, vo
 6. Sem @ nem nome de seguidor em arquivo. Comentários: categorias aprovadas antes de contar, 2 exemplos copiados ao pé da letra, quantas linhas lidas.
 
 ## 7. Indicadores com definição congelada
-Escrever em `relatorios/indicadores.md` na primeira semana e NUNCA mudar a definição (senão a comparação entre meses perde o valor). Mudou a regra de contagem? Abrir um indicador novo e manter o velho. Proposta (a validar com o Victor):
+Escrever em `relatorios/indicadores.md` na primeira semana e NUNCA mudar a definição (senão a comparação entre meses perde o valor). Mudou a regra de contagem? Abrir um indicador novo e manter o velho. Aprovado pelo Victor em 21/11 (congela depois da primeira semana):
 1. Vídeos produzidos e quantos passaram na conferência de primeira.
 2. Aprovados sem ajuste, com ajuste e recusados.
 3. Publicados por rede e por trilha.

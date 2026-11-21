@@ -31,9 +31,8 @@ Se o Victor aprovar, só assim:
 - Sem modelo que pareça pessoa real ou famosa; sem menor de idade; sem sexualizar.
 - Voz feminina "recomendando" perfume para homem (como ele faz) também é depoimento falso: não fazer.
 
-### Porta-voz fictício do livro 13 · DECISÃO DO VICTOR (não aprovado)
-Origem: livro 13, cap. 9 e Apêndice C (notas em `conteudo/estudos/livros/13-publicidade-em-video.md`). O livro propõe uma porta-voz fictícia que **informa e convida, nunca dá depoimento**. Isso difere da proibição acima, que barra a modelo "recomendando". O Victor decide entre: (a) manter a proibição atual; (b) autorizar só este desenho. Até a resposta, vale (a).
-Se autorizar (b), exigir tudo isto:
+### Porta-voz fictício do livro 13 · LIBERADO pelo Victor em 21/11 (só neste desenho)
+Origem: livro 13, cap. 9 e Apêndice C (notas em `conteudo/estudos/livros/13-publicidade-em-video.md`). O livro propõe uma porta-voz fictícia que **informa e convida, nunca dá depoimento**. Isso difere da proibição acima, que barra a modelo "recomendando". Decidido: vale (b), com tudo isto obrigatório:
 - Conta separada da Quase Aconteceu, etiqueta de IA da rede e tarja na tela "Personagem criado com IA".
 - Pode dizer: o produto, a embalagem, onde comprar, convite neutro ("procure na loja") e informação que vem do anúncio. **Nunca** diz que usou, comprou, gostou ou recomenda por experiência, nem promete resultado. "Porta-voz não é cliente."
 - Rosto inventado do zero, sem lembrar pessoa conhecida, sem menor de idade, sem sexualizar.
@@ -46,4 +45,4 @@ Se autorizar (b), exigir tudo isto:
 
 ## 4. Regra de produção que veio junto
 Antes de gerar qualquer coisa com IA (sistema, imagem, vídeo, roteiro), **pedir para a própria IA melhorar o pedido com detalhes** e conferir esse pedido melhorado antes de mandar produzir.
-| Porta-voz fictício que informa e convida, nunca dá depoimento (livro 13) | DECISÃO DO VICTOR | skill escala-hype-e-afiliado seção 3 |
+| Porta-voz fictício que informa e convida, nunca dá depoimento (livro 13) | LIBERADO 21/11 | skill escala-hype-e-afiliado seção 3 |

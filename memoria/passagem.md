@@ -56,3 +56,13 @@
 - **Feito:** download direto (hosts drive.google.com e drive.usercontent.google.com liberados no ambiente; pasta NÃO aberta para edição pública); 12 leitores leram tudo (1,2 mi palavras) e deixaram notas em `conteudo/estudos/livros/`; 5 redatores criaram 8 skills (rotinas-autonomas, seguranca, medicao-e-teste, revisor, direcao-cena, conformidade-plataformas, custos, pedir-a-ia) e ampliaram 14; `ferramentas/conferir_texto.py`; `memoria/pronuncia.md`, `versoes.md`, `acessos.md`, `reversao.md`, `testes-bot.md`, `registro-rodadas.csv`; índice do CLAUDE.md. Worker: Aprova duplicado, update repetido, duas chaves na troca, /pausa e /retomar, sinal de vida da rodada e alerta por Cron (44 testes).
 - **Decisões do Victor pendentes:** ver resposta de 21/11 (porta-voz fictício, área segura, indicadores, gerador com referência para personagem, gasto pago, hooks de trava, separar radar, Cron, assinatura na Greenn).
 - **Verificado:** 44 testes do Worker; conferir_texto sem travessão nas skills; notas conferidas até a última linha pelos leitores. Não verificado: hooks de trava em tarefa agendada na nuvem; termos de uso de Flow, FLUX, Piper, Veo, Nano Banana.
+
+## 21/11/2026 · decisões do Victor (tarde)
+- Passo 3: Victor vai fazer pelo chat do Cowork com `telegram/BRIEFING-PASSO-3-COWORK.md` + worker.js anexado; depois avisa "chave trocada" e aqui reabre o formulário da FABRICA_KEY.
+- GTA 6 parte 1: RECUSADO ("não gostei"). Motivo não detalhado: perguntar o que não agradou antes do próximo de GTA.
+- Porta-voz fictício (livro 13): LIBERADO no desenho do livro (informa e convida, nunca depoimento, tarja "Personagem criado com IA", conta separada).
+- Área segura: Y 285 a 1248 (regra do livro 09), em editor, revisor, produção e CLAUDE.md.
+- Geradores: Victor assina Gemini Pro (Nano Banana + Flow/Veo) e ChatGPT Plus; Nano Banana é o principal para âncora de personagem, Flow para clipe.
+- 7 indicadores da escala-medicao-e-teste: aprovados.
+- Travas técnicas: explicado; testar numa rodada antes de ligar (pendente).
+- Link do PR dá 404 para o Victor: repositório privado; abrir logado no GitHub da conta dona de contato400/escala.

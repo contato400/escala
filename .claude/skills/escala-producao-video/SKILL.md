@@ -14,7 +14,7 @@ Régua de qualidade, conferência, capa e estudo de referência: `escala-editor-
 
 ## Padrão técnico
 - 1080x1920, 30 fps, 60 a 90 s (série) ou 20 a 45 s (tendência rápida).
-- Área segura: texto entre Y 285 e 1470 e X 110 a 945 (fora disso a interface das redes cobre).
+- Área segura: texto entre Y 285 e 1248 e X 110 a 945 (fora disso a interface das redes cobre).
 - Primeiro quadro claro e chamativo; som desde o quadro 0; legenda grande e legível; sem tela preta no fim; sem logo no começo.
 - Trilha e efeitos só de biblioteca livre (ou a biblioteca da própria rede na hora de postar).
 

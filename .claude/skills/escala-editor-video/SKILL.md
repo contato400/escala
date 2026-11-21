@@ -11,11 +11,11 @@ Régua de qualidade herdada do que o Victor já aprovou e reprovou em outro proj
 Arquivo: `qa_<serie>_<formato>_vN-<o-que-mudou>_AAAA-MM-DD.mp4`. Nunca "final".
 
 ## 2. Área segura (vale para tudo em 9:16, 1080x1920)
-- Topo: 220 px livres (nome, áudio). Base: 450 px livres (legenda do post, música): nada importante abaixo de **Y 1470**.
+- Topo: 220 px livres (nome, áudio). Base: **672 px livres** (legenda do post, música, botões): nada importante abaixo de **Y 1248** (decidido pelo Victor em 21/11, regra do livro 09).
 - Coluna de botões na direita: nada importante depois de **X 945** da altura Y 1150 para baixo. Laterais 35 px.
-- **Regra prática:** texto, rosto, número e botão entre **Y 285 e 1470** e **X 110 e 945**. Fundo pode ocupar tudo.
+- **Regra prática:** texto, rosto, número e botão entre **Y 285 e 1248** e **X 110 e 945**. Fundo e objetos de cena (celular, porta) podem descer, mas o que precisa ser lido fica acima de 1248. No motor do celular: no máximo 2 bolhas visíveis (usar `limpar_bolhas`).
 - Mesma posição em todas as cenas (nada pula). Não coube? diminui ou reorganiza.
-- **Fica a nossa (Y 285 a 1470).** Outras referências, só anotadas: guia g03 Y 285 a 1635 e X 110 a 970; livro 09 (regra de anúncio de Reels da Meta) Y 269 a 1248, deixando 35% da base livre; anúncio da Meta pede 14% topo, 35% base, 6% lados. A nossa é a mais folgada embaixo. **DECISÃO DO VICTOR:** quer segurar rosto e legenda principal acima de Y 1248 (mais seguro no Reels) ou manter Y 1470? Até ele decidir, vale Y 1470.
+- **Decidido (Victor, 21/11): Y 285 a 1248**, a regra do livro 09 (35% da base livre). Referências antigas só para histórico: nossa anterior Y 1470; guia g03 Y 1635.
 
 ## 3. Padrão mínimo de produção (nada abaixo disso vai ao Victor)
 - **Cena, não slide:** cada vídeo tem um objeto ou personagem que conta a história (celular, conversa sendo digitada, porta, mapa, boneco). Texto solto em fundo liso só de apoio.

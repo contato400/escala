@@ -22,7 +22,7 @@ Silêncio não distingue "nada a fazer" de "a rodada não rodou". Cada rodada te
 - "Sem pedidos novos" só vale se `central.py pedidos` respondeu e veio vazio.
 - Se o próprio aviso falhar: registrar na `memoria/passagem.md` e tentar de novo no começo da próxima rodada. Repetir só o que oscila (rede, 5xx), com espera crescente; erro de chave ou de regra não se repete, avisa.
 - O aviso só termina em pergunta quando precisa de decisão. Evita conversa em laço entre fábrica e bot.
-- Ninguém confere hoje se a linha veio. Regra manual: sem linha até 30 minutos depois da hora, a rodada não rodou; avisar o Victor na próxima chance. DECISÃO DO VICTOR: aprovar uma conferência automática no Worker (Cron Trigger que avisa o Victor se faltar sinal da rodada, no máximo 1 aviso por hora). Exige mudar `telegram/worker.js` e colar no painel.
+- Ninguém confere hoje se a linha veio. Regra manual: sem linha até 30 minutos depois da hora, a rodada não rodou; avisar o Victor na próxima chance. (Cron Trigger no Worker resolve isto: passo 3, item F) aprovar uma conferência automática no Worker (Cron Trigger que avisa o Victor se faltar sinal da rodada, no máximo 1 aviso por hora). Exige mudar `telegram/worker.js` e colar no painel.
 
 ## 3. Regra do horário perdido, com registro por rodada
 A tarefa pode rodar atrasada ou duas vezes. Colar no fim do prompt de cada rodada:
@@ -54,7 +54,7 @@ Cada rodada cria `output/AAAA-MM-DD-HHMM/` (nosso). A peça final continua em `c
 Corrigir uma rodada sempre pela mesma conversa de configuração, com nome claro ("config · rodada 7h"), nunca criando tarefa duplicada. Medir custo antes e depois de cada mudança.
 
 ## 6. Pausa e reversão em 5 passos
-Hoje o bot NÃO tem `/pausa`. Pausa manual: desativar as 3 tarefas agendadas e não aprovar nada. DECISÃO DO VICTOR: quer `/pausa` e `/retomar` no bot? Exigiria `telegram/worker.js` gravar a flag `estado:pausado` no KV e `central.py` a ler no começo da rodada (se pausado, só avisa e termina).
+O bot tem `/pausa` e `/retomar` (21/11). Toda rodada começa lendo `pausa` em `python3 ferramentas/central.py pedidos`: se vier preenchido, manda só a linha "pausado, nada feito" e termina.
 Plano de reversão (livro 20), a gravar em `memoria/reversao.md` (a criar):
 1. Sinais que mandam pausar: vídeo no ar quebrando regra fixa; erro de fato com dano; aviso ou restrição de conta; 3 posts seguidos de 0 a 200 views; gasto acima do teto; chave vazada; rodada duplicada.
 2. Quem pode pausar: o Victor e o chefe.

@@ -39,7 +39,7 @@ Procedimento:
 3. Comparar com a ficha do personagem e com o quadro aprovado.
 4. Em cada corte: último quadro de um plano contra o primeiro do seguinte.
 5. Ouvir só o som: fala que ninguém escreveu, palavra trocada (ver `memoria/pronuncia.md`), música que não devia, primeira palavra comida por clique.
-6. Entrega (livro 09, Modelo 03), no arquivo exportado: 1080x1920, sem quadro preto ou congelado, nada importante fora de Y 285 a 1470, loudnorm e pico, legenda igual ao que se ouve, sem texto que ninguém pôs, imagem e som desde o 1º quadro, fim não arrasta, etiqueta IA, aviso de publicidade se houver.
+6. Entrega (livro 09, Modelo 03), no arquivo exportado: 1080x1920, sem quadro preto ou congelado, nada importante fora de Y 285 a 1248, loudnorm e pico, legenda igual ao que se ouve, sem texto que ninguém pôs, imagem e som desde o 1º quadro, fim não arrasta, etiqueta IA, aviso de publicidade se houver.
 - Tabela: Tempo | Plano | Família | O que se vê | Aparece sem pausar ou só pausando | Correção mais barata (cortar o trecho, trocar o som, corrigir imagem e regerar, mudar a abordagem). Limpo = escreva "sem defeito". Dúvida = "conferir no vídeo".
 
 ## 5. Gancho: 3 versões e um juiz (livro 05)

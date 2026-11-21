@@ -43,5 +43,5 @@ Leia junto: `escala-rotinas-autonomas` (rodada que não some, pausa, bateria de 
 6. Levar o erro limpo (sem token, Id nem endereço) a outra IA, dizendo o que já foi tentado.
 Se o canal está com defeito, não perguntar a ele: perguntar por outro caminho. Não trocar token nem reiniciar nada sem o "pode" do Victor.
 
-## Pendências de código (descritas, não feitas aqui; DECISÃO DO VICTOR: aprovar e colar no painel)
-Ignorar `update_id` repetido; avisar o Victor de erro interno (no máximo 1 por hora); aceitar `FABRICA_KEY` e `FABRICA_KEY_NOVA` para trocar sem janela; `/pausa` e `/retomar`; conferência de rodada por Cron Trigger; data de hoje no prompt do bot; travar o segundo toque em "Aprova". A pausa está descrita em `escala-rotinas-autonomas`.
+## Já no código (21/11, 44 testes)
+Ignora `update_id` repetido; segundo toque em "Aprova" não duplica; aceita `FABRICA_KEY` e `FABRICA_KEY_NOVA` na troca; `/pausa` e `/retomar` (a fábrica lê `pausa` em `central.py pedidos` e, se pausada, só avisa e termina); sinal de vida `central.py estado --rodada "..."` e alerta por Cron Trigger após 7 h sem sinal; data de hoje na conversa; print de métrica vira pedido tipo `print`.
